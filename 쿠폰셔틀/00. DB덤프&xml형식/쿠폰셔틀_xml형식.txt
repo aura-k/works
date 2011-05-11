@@ -1,0 +1,71 @@
+﻿<root>	
+	<product> 
+		<p_name><![CDATA[물품제목]]></p_name> 
+		<p_info><![CDATA[물품내용]]></p_info> 
+		<org_price>30000</org_price> <!--원가격(숫자만)-->
+		<price>10000</price> <!--할인가격(숫자만)-->
+		<now_user>99</now_user> <!--구입인원(숫자만)-->
+		<max_user>3000</max_user> <!--최대구매인원(숫자만)-->
+		<image>http://xxx.com/xxx.jpg</image> <!--이미지-->
+		<start_date>20100826235959</start_date> <!--시작시간 YYYYMMDDHHIISS-->
+		<end_date>20100826235959</end_date> <!--마감시간 YYYYMMDDHHIISS-->
+		<url>http://xxx.com/?id=XXX</url> <!--접속url-->
+		<area>2</area> <!--지역(하단설명참고)-->
+		<category>1</category> <!--카테고리(하단설명참고)-->
+		<address>서울 중구 명동2가 2-1</address> <!--업체주소-->
+		<scm_name>XX고깃집</scm_name> <!--업체이름-->
+		<scm_phone>02-1212-1212</scm_phone> <!--업체연락처-->
+	</product> 
+	
+	<!--판매물품이 두개이상 있다면 product노드를 추가 구성-->
+	<product> 
+		<p_name><![CDATA[물품제목]]></p_name> 
+		<p_info><![CDATA[물품내용]]></p_info> 
+		<org_price>30000</org_price> <!--원가격(숫자만)-->
+		<price>10000</price> <!--할인가격(숫자만)-->
+		<now_user>99</now_user> <!--구입인원(숫자만)-->
+		<max_user>3000</max_user> <!--최대구매인원(숫자만)-->
+		<image>http://xxx.com/xxx.jpg</image> <!--이미지-->
+		<start_date>20100826235959</start_date> <!--시작시간 YYYYMMDDHHIISS-->
+		<end_date>20100826235959</end_date> <!--마감시간 YYYYMMDDHHIISS-->
+		<url>http://xxx.com/?id=XXX</url> <!--접속url-->
+		<area>2</area> <!--지역(하단설명참고)-->
+		<category>1</category> <!--카테고리(하단설명참고)-->
+		<address>서울 중구 명동2가 2-1</address> <!--업체주소-->
+		<scm_name>XX고깃집</scm_name> <!--업체이름-->
+		<scm_phone>02-1212-1212</scm_phone> <!--업체연락처-->
+	</product> 
+</root> 
+
+
+/*
+지역목차(해당 지역에 해당하는 번호를 area노드 부분에 출력 해주시면 됩니다.)
+0 - 전국
+1 - 서울
+2 - 경기
+3 - 인천
+4 - 부산
+5 - 대구
+6 - 광주
+7 - 대전
+8 - 울산
+9 - 강원
+10 - 충북
+11 - 충남
+12 - 전북
+13 - 전남
+14 - 경북
+15 - 경남
+16 - 제주
+17 - 기타
+
+
+카테고리목차(해당 카테고리에 해당하는 번호를 category노드 부분에 출력 해주시면 됩니다.)
+0 - 기타
+1 - 맛집/카페
+2 - 뷰티/라이프
+3 - 여행/레저
+4 - 공연/전시
+5 - 패션
+6 - 교육
+*/
