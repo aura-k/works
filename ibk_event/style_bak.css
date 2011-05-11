@@ -1,0 +1,76 @@
+body, ul, li, div, a { padding:0; margin:0; }
+.hand { cursor:pointer; }
+
+.frame { position:relative; width:320px; height:417px; padding:0; margin:0; }/*overflow:hidden;*/
+.frame ul { list-style:none; padding:0; margin:0; white-space:nowrap; }
+.frame ul li { display:inline-block; padding:0; margin:0; width:320px; vertical-align:top; }
+
+#main { /*background:url('bg_main.png') no-repeat;*/ height:417px; text-align:center; padding:0; }
+#main ul {  list-style:none; padding:0; margin:0; white-space:nowrap; }
+#main ul li { display:inline-block; margin:0; width:160px; }
+#main .lev0 { text-align:left; padding-top:165px; height:58px; }
+#main .lev1 { text-align:left; }
+#main .lev2 { text-align:left; }
+#main .lev3 { text-align:left; }
+#main .twit { top:0px; right:0px;}
+
+#cf .twit { width:320px; text-align:right;top:0px; right:0px;}
+#cf .home { width:320px; text-align:center; margin-top:-85px; }
+#cf { /*background:url('bg_clear.png') no-repeat;*/ height:500px; text-align:center; padding:0; }
+#cf .content1 { margin-top:-10px;}
+#cf .content2 { margin-top:10px;}
+
+#info .twit { width:320px; text-align:right;top:0px; right:0px;}
+#info .home { width:320px; text-align:center; margin-top:-85px; }
+#info { /*background:url('bg_cf.png') no-repeat;*/ height:500px; text-align:center; padding:0; }
+#info .content1 { text-align:left; margin-top:-10px; }
+#info .content2 { text-align:right; margin-top:-40px; }
+
+#info_1 { /*background:url('img_phone.png') no-repeat;*/ width:320px; height:2177px; padding:0; margin:0; }
+#info_1 .content1 { width:320px; padding:0; margin:0; }
+#info_1 .content3 { margin-top:2081px; }
+
+#info_2 { /*background:url('img_pay.png') no-repeat;*/ width:320px; height:2660px; padding:0; margin:0; }
+#info_2 .content1 { width:320px; padding:0; margin:0; }
+#info_2 .content3 { margin-top:2564px; }
+
+
+#ani .twit { width:320px; text-align:right;top:0px; right:0px;}
+#ani .home { width:320px; text-align:center; margin-top:-85px; }
+#ani { /*background:url('bg_ani.png') no-repeat;*/ height:417px; text-align:center; padding:0; }
+#ani .content1 { margin-top:45px; }
+
+#input1 { /*background:url('bg_event.png') no-repeat;*/ height:500px; text-align:center; padding:0; }
+#input1 .content { text-align:left; margin:158px 0 0 65px; }
+#input1 .button {  margin-top:7px; }
+
+#game { height:417px; -webkit-transition: -webkit-transform 1000ms ease-in-out; }
+#game ul { -webkit-transition: -webkit-transform 500ms; list-style:none; padding:0; margin:0; white-space:nowrap; }
+#game ul li {width:320px; height:417px; text-align:center; display:inline-block; margin:0 -4px 0 0; padding:0;}
+#game ul li .logic_st { /*background:url('bg_game_st.png') no-repeat;*/ height:417px;}
+#game ul li .logic { /*background:url('bg_game.png') no-repeat;*/ height:417px;}
+#game ul li .logic2 { /*background:url('bg_game2.png') no-repeat;*/ height:417px;}
+#game ul li .logic3 { /*background:url('bg_game3.png') no-repeat;*/ height:417px;}
+#game ul li .result1 { /*background:url('bg_result_1.png') no-repeat;*/ height:417px;}
+#game ul li .result2 { /*background:url('bg_result_2.png') no-repeat;*/ height:417px;}
+#game ul li .result3 { /*background:url('bg_result_3.png') no-repeat;*/ height:417px;}
+#game ul li .result4 { /*background:url('bg_result_4.png') no-repeat;*/ height:417px;}
+#game ul li .qst {margin-top:74px; height:100px}
+#game ul li .ans {margin-top:0px;}
+#game ul li .event {float:right; right:0px; margin-top:-125px}
+#game ul li .detail {margin:210px 0 0 55px;}
+
+#game ul li  .popup {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event1 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event2 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event3 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event4 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event1_1 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event2_1 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event3_1 {position:absolute; z-index:9999; display:none; }
+#game ul li  .popup_event4_1 {position:absolute; z-index:9999; display:none; }
+
+.popup_event_input1 {position:absolute; z-index:9999; display:none; }
+.popup_event_input2 {position:absolute; z-index:9999; display:none; }
+
+input, select {font:1em Helvetica}
