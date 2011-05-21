@@ -1,0 +1,276 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body, table {font-size: 12px;font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+-->
+</style>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='./js/script.js'></script>
+<script>
+function changeStatus(sid, id){
+var deli = new Array;
+var deli_name = new Array;
+deli[sid] = document.getElementById('deli'+sid).value;
+
+	switch(deli[sid]){
+		case '00': deli_name[sid] = "배송준비";
+		break;
+		case '01': deli_name[sid] = "배송중";
+		break;
+		case '02': deli_name[sid] = "배송완료";
+		break;
+	}
+
+	if(confirm('아이템ID : '+sid+'\n배송자ID : '+id+'\n배송상태를 "'+ deli_name[sid] +'"로 바꾸시겠습니까?')){
+		$.post("./php/changeShipStatus.php",{"sid":sid, "uid":id, "status":deli[sid]},function(data){
+			if(data == "ok"){
+				alert("올바르게 바뀌었습니다.");
+				location.reload();
+			}else alert("변경에 실패하였습니다. 다시 시도해 주세요");
+		});
+	}
+}
+</script>
+</head>
+
+<body>
+<? 
+	include "inc.html";
+	include "../php/connect.php";
+
+	function pagecount($id){
+		$sql=mysql_query("select COUNT(no) as cnt from BBanana_ships WHERE `order_num` LIKE  '".$id."%'") or die(mysql_error());
+		$row=mysql_fetch_array($sql);
+		    
+		return $row['cnt'];
+	}
+?>
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+
+
+
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">배송관리 |  
+              <input name="" type="text" />
+              <a href="#">검색</a></td>
+          </tr>
+        </table>
+		아이템 결제 내역 (총 <?=pagecount("I")?>건)
+        <table width="100%" border="0" cellspacing="1" cellpadding="7" bgcolor="#333333" style="margin-bottom:20px;">
+          <tr bgcolor="#FFFFFF">
+            <td width="5%" height="30px;" class="c"><b>번호</b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?item_sort=pay_method">결제방법</a></b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?item_sort=item_price">금액</a></b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?item_sort=user_id">아이디</a></b></td>
+            <td width="10%" class="c"><b>내용</a></td>
+			<td width="15%" class="c"><b><a href="08_payment.html?item_sort=ship_created">주문시간</a></b></td>
+            <td width="10%" class="c"><strong>연락처</strong></td>
+            <td width="7%" class="c"><b>결제여부</b></td>
+			<td width="5%" class="c"><b>결제취소</b></td>
+          </tr>
+		  <?
+		  $page_scale = 10;//한페이지당 보일 목록의 갯수
+		  $ship_cnt = pagecount("I");
+
+		  if ($ship_cnt%$page_scale == 0)    
+			 $ship_pcnt = floor($ship_cnt/$page_scale)-1;     
+		  else
+			 $ship_pcnt = floor($ship_cnt/$page_scale);
+
+		  if($_GET['item_p'] == null) $_GET['item_p'] = 0;
+		  if($_GET['item_sort'] == null) $_GET['item_sort'] = 'no';
+
+		  $sql=mysql_query("select * from BBanana_ships WHERE `order_num` LIKE  'I%' order by ".$_GET['item_sort']." DESC limit ".($_GET['item_p']*$page_scale).", ".$page_scale) or die(mysql_error()); 			
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+			$s_stats0 = "";
+			$s_stats1 = "";
+			$s_stats2 = "";
+
+			if(substr($row['order_num'],0,1) == "I"){
+				if($row['ship_type'] == 'win') $s_type = "낙찰구매";
+				else $s_type = "보상구매";
+			}else{
+				$s_type = "바나나충전";
+			}
+			
+			if($row['is_deposit'] == "no")
+				$is_depo = "<div onclick='copy_text(\"".$row['bankInfo']."\")' style='color:red;cursor:pointer' alt='".$row['bankInfo']."' title='".$row['bankInfo']."'>안함</div>";
+			else
+				$is_depo = "<div style='cursor:pointer' alt='".$row['deposit_date']."' title='".$row['deposit_date']."'>결제확인</div>";
+			
+			switch($row['pay_method']){
+				case "VCard": $i_pay_method = "신용카드(ISP)";
+					break;
+				case "Card": $i_pay_method = "신용카드(안심)";
+					break;
+				case "OCBPoint": $i_pay_method = "OK캐쉬백";
+					break;
+				case "DirectBank": $i_pay_method = "실시간계좌";
+					break;
+				case "HPP": $i_pay_method = "핸드폰";
+					break;
+				case "VBank": $i_pay_method = "가상계좌";
+					break;
+				case "Ars1588Bill": $i_pay_method = "1588전화";
+					break;
+				case "PhoneBill": $i_pay_method = "폰빌전화";
+					break;
+				case "Culture": $i_pay_method = "문화상품권";
+					break;
+				case "TEEN": $i_pay_method = "틴캐시";
+					break;
+				case "DGCL": $i_pay_method = "게임문화";
+					break;
+				case "BCSH": $i_pay_method = "도서문화";
+					break;
+				case "OABK": $i_pay_method = "네이트미니";
+					break;
+				default: $i_pay_method = "";
+					break;
+			}
+
+			echo"<tr bgcolor='#FFFFFF'>
+            <td class='c'>".$row['no']."</td>
+            <td class='c'>".$i_pay_method."</td>
+			<td class='r'>".number_format($row['item_price'])." 원</td>
+            <td class='c'>".$row['user_id']."</td>
+            <td class='c'><a href='../html/sub.html?sid=".$row['item_id']."' alt='".$row['item_fname']."' title='".$row['item_fname']."' target='_blank'>".$s_type."</a></td>
+			<td class='c'>".date('Y-m-d h:i:s',$row['ship_created'])."</td>
+            <td class='c'>".$row['phone_num1']."-".$row['phone_num2']."-".$row['phone_num3']."</td>
+            <td class='c'>".$is_depo."</td>
+			<td class='c'><a href='../INIpay50/php/INIcancel.html?tid=".$row['invoice_no']."' target='_blank'>취소</a></td>
+          </tr>";
+
+			$i++;
+			++$cnt;
+			}
+			
+		  ?>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">
+			<?
+			for($i=0;$i<=$ship_pcnt;$i++)
+				echo "<a href=\"08_payment.html?item_p=".$i."\">".($i+1)."</a>&nbsp;";
+			?>
+			</td>
+          </tr>
+        </table>
+		바나나 충전 내역 (총 <?=pagecount("B")?>건)
+		<table width="100%" border="0" cellspacing="1" cellpadding="7" bgcolor="#333333" style="margin-bottom:20px;">
+          <tr bgcolor="#FFFFFF">
+            <td width="5%" height="30px;" class="c"><b>번호</b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?banana_sort=pay_method">결제방법</a></b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?banana_sort=item_price">금액</a></b></td>
+            <td width="10%" class="c"><b><a href="08_payment.html?banana_sort=user_id">아이디</a></b></td>
+            <td width="10%" class="c"><b>내용</b></td>
+			<td width="10%" class="c"><strong>충전바나나</strong></td>
+			<td width="15%" class="c"><b><a href="08_payment.html?banana_sort=ship_created">주문시간</a></b></td>
+            <td width="7%" class="c"><b>결제여부</b></td>
+			<td width="5%" class="c"><b>결제취소</b></td>
+          </tr>
+		  <?
+		  $page_scale = 10;//한페이지당 보일 목록의 갯수
+		  $ship_cnt = pagecount("B");
+
+		  if ($ship_cnt%$page_scale == 0)    
+			 $ship_pcnt = floor($ship_cnt/$page_scale)-1;     
+		  else
+			 $ship_pcnt = floor($ship_cnt/$page_scale);
+
+		  if($_GET['banana_p'] == null) $_GET['banana_p'] = 0;
+		  if($_GET['banana_sort'] == null) $_GET['banana_sort'] = 'no';
+		  $sql=mysql_query("select * from BBanana_ships WHERE `order_num` LIKE  'B%' order by ".$_GET['banana_sort']." DESC limit ".($_GET['banana_p']*$page_scale).", ".$page_scale) or die(mysql_error()); 			
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+			$s_stats0 = "";
+			$s_stats1 = "";
+			$s_stats2 = "";
+			
+			if($row['is_deposit'] == "no")
+				$is_depo = "<div onclick='copy_text(\"".$row['bankInfo']."\")' style='color:red;cursor:pointer' alt='".$row['bankInfo']."' title='".$row['bankInfo']."'>안함</div>";
+			else
+				$is_depo = "<div style='cursor:pointer' alt='".$row['deposit_date']."' title='".$row['deposit_date']."'>결제확인</div>";
+
+			switch($row['pay_method']){
+				case "VCard": $i_pay_method = "신용카드(ISP)";
+					break;
+				case "Card": $i_pay_method = "신용카드(안심)";
+					break;
+				case "OCBPoint": $i_pay_method = "OK캐쉬백";
+					break;
+				case "DirectBank": $i_pay_method = "실시간계좌";
+					break;
+				case "HPP": $i_pay_method = "핸드폰";
+					break;
+				case "VBank": $i_pay_method = "가상계좌";
+					break;
+				case "Ars1588Bill": $i_pay_method = "1588전화";
+					break;
+				case "PhoneBill": $i_pay_method = "폰빌전화";
+					break;
+				case "Culture": $i_pay_method = "문화상품권";
+					break;
+				case "TEEN": $i_pay_method = "틴캐시";
+					break;
+				case "DGCL": $i_pay_method = "게임문화";
+					break;
+				case "BCSH": $i_pay_method = "도서문화";
+					break;
+				case "OABK": $i_pay_method = "네이트미니";
+					break;
+				default: $i_pay_method = "";
+					break;
+			}
+
+			echo"<tr bgcolor='#FFFFFF'>
+            <td class='c'>".$row['no']."</td>
+            <td class='c'>".$i_pay_method."</td>
+			<td class='r'>".number_format($row['item_price'])." 원</td>
+            <td class='c'>".$row['user_id']."</td>
+            <td class='c'>".$row['item_fname']."</td>
+			<td class='c'>".$row['charged_banana']." 개</td>
+			<td class='c'>".date('Y-m-d h:i:s',$row['ship_created'])."</td>
+            <td class='c'><div alt='".$row['bankInfo']."' title='".$row['bankInfo']."'>".$is_depo."</div></td>
+			<td class='c'><a href='../INIpay50/php/INIcancel.html?tid=".$row['invoice_no']."' target='_blank'>취소</a></td>
+          </tr>";
+
+			$i++;
+			++$cnt;
+			}
+		  ?>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr><td align="center">
+            <?
+			for($i=0;$i<=$ship_pcnt;$i++)
+				echo "<a href=\"08_payment.html?banana_p=".$i."\">".($i+1)."</a>&nbsp;";
+			mysql_close($connect);
+			?></td>
+          </tr>
+        </table>
+</td>
+      </tr>
+    </table>
+</body>
+</html>

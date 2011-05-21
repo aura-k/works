@@ -1,0 +1,140 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="./se/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="./se/js/jindo.min.js" charset="utf-8"></script>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="../js/sunny/jquery-ui-1.8.custom.min.js"></script> 
+<script type='text/javascript' src='../js/ui.datepicker.js'></script>
+<link type="text/css" href="../css/sunny/jquery-ui-1.8.custom.css" rel="stylesheet" />
+<style type="text/css">
+<!--
+body, table {font-size: 12px;font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+-->
+</style>
+<script>
+function init(){
+$.datepicker.setDefaults({
+	dateFormat: 'yy-mm-dd',
+	buttonImageOnly: true,
+	buttonText: "달력",
+	buttonImage: "calendar.gif"
+});
+$("#datepicker2").datepicker({
+		defaultDate: new Date(),
+		showOn: "both", // focus, button, both
+		showOptions: {direction: 'horizontal'},
+		duration: 200
+	});
+}
+function makeSubmit(){
+var ir1 = document.getElementById('ir1');
+var ir1 = document.getElementById('form1');
+oEditors[0].exec("UPDATE_IR_FIELD", []);
+	// 에디터의 내용에 대한 값 검증은 이곳에서 textarea 필드인 ir1의 값을 이용해서 처리하면 됩니다.
+
+	try{
+		// 이 라인은 현재 사용 중인 폼에 따라 달라질수 있습니다.
+		form1.submit();
+	}catch(e){}
+}
+
+function checkSid(){
+var category = document.getElementById('category');
+var sid_span = document.getElementById('sid_span');
+	$.post("./php/checkSid.php",{"category":category.value},function(data){
+		$('.sid_span').text(data);
+		sid_span.value = data;
+	});
+}
+</script>
+</head>
+
+<body onload="init();checkSid()">
+<? include "inc.html";?>
+<form id="form1" action="./php/registerItemAction.php" method="post" enctype="multipart/form-data">
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">경매등록</td>
+          </tr>
+        </table>
+        <table width="845" border="0" cellspacing="1" cellpadding="0" bgcolor="#999999" style="margin-bottom:20px;">
+  <tr bgcolor="#FFFFFF">
+    <td width="220" height="30">카테고리</td>
+    <td width="725"><select name="category" id="category" style="width:150px" onchange="checkSid()">
+                        								<option value="1">디지털</option>
+                                                        <option value="2">컴퓨터</option>
+                                                        <option value="3">패션/뷰티</option>
+                                                        <option value="4">라이프</option>
+                                                      </select></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td width="220" height="30">짧은 상품명</td>
+    <td width="725"><input name="item_s_title" type="text" style="width:400px;"  /></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td width="220" height="30">긴 상품명</td>
+    <td width="725"><input name="item_title" type="text" style="width:400px;"  /></td>
+  </tr>
+	<tr bgcolor="#FFFFFF">
+    <td height="30">메인이미지</td>
+    <td><input type="file" name="file" id="file" /></td>
+  </tr>
+    <tr bgcolor="#FFFFFF">
+    <td height="30">이미지</td>
+    <td><input type="file" name="file1" id="file1" /><br><input type="file" name="file2" id="file2" /><br><input type="file" name="file3" id="file3" /><br><input type="file" name="file4" id="file4" /><br><input type="file" name="file5" id="file5" /></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">상품설명</td>
+    <td width="725"><textarea name="ir1" id="ir1" style="width:725px; height:300px"></textarea></td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">경매 예상종료시간 설정</td>
+    <td><input type="text" name="datepicker" id="datepicker2" class="datepicker_input1">&nbsp;<input name="hour" type="text" style="width:50px;"  />시 <input name="min" type="text" style="width:50px;"  />분 <input name="sec" type="text" style="width:50px;"  />초</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">정가</td>
+    <td><input name="rrp" type="text" style="width:150px;"  />
+    원</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">*최저낙찰가*</td>
+    <td><input name="min_price" type="text" style="width:150px;"  />
+    원</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">보상구매 가능여부</td>
+    <td><input type="radio" name="re" value="yes" checked>가능 <input type="radio" name="re" value="no">불가능</td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="30">경매번호 : <span class="sid_span"></span><input name="sid_span" id="sid_span" type="hidden"/></td>
+    <td><input type="button" value="등록" onclick="makeSubmit()"/></td>
+  </tr>
+</table>
+        </td>
+      </tr>
+    </table>
+	</form>
+	<script>
+	var oEditors = [];
+		nhn.husky.EZCreator.createInIFrame({
+		oAppRef: oEditors,
+		elPlaceHolder: "ir1",
+		sSkinURI: "./se/SEditorSkin.html",
+		fCreator: "createSEditorInIFrame"
+	});
+	</script>
+</body>
+</html>

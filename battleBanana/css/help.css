@@ -1,0 +1,59 @@
+/*ว๏วม*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, select, object {
+	margin:0; padding:0; border:0; outline:0; }
+
+body {margin:0; padding:0; border:none; font-size:12px; font-family:Dotum, Arial;}
+.float_left {position:fixed; z-index:1; left:0; top:0; width:145px; border:solid 1px #bbbbbb; height:100%; background-color:#fafafa; color:#2e3e4b;}
+.float_left a:link    {color:#2e3e4b; text-decoration:none;}
+.float_left a:visited {color:#2e3e4b; text-decoration:none;}
+.float_left a:hover   {color:#2e3e4b; text-decoration:underline;}
+.float_left table {margin:55px 0 0 5px;}
+.float_left tr {height:23px;}
+
+.bullet {width:10px;}
+.bullet_s {width:10px; background-image:url(../img/help/img_bullet.gif);}
+
+.float_top {position:fixed; z-index:2; left:0; top:0; width:100%;}
+
+.input_big {background:white;border:0;display:inline;font-size:25px;outline-style:none;}
+
+.select { margin-bottom:30px; line-height: 2.0em;}
+.select a:link {color: #4e7b4a;text-decoration:none;}
+.select a:visited {color: #4e7b4a; text-decoration:none;}
+.select a:hover {color: #4e7b4a; text-decoration:underline;}
+
+.boundary { height:3px; background-image:url(../img/help/bg_dot.gif);}
+
+.title {font-size:16px; font-weight:bold; margin-top:15px;}
+
+.content {padding:15px;	line-height: 1.5em;	color:#888888;}
+
+.b { font-weight:bold;}
+.al8 {padding-left:8px;}
+
+.n0 {padding-left:15px;}
+.n1 {background:url(../img/help/n01.gif) no-repeat left 3px;padding-left:15px;}
+.n2 {background:url(../img/help/n02.gif) no-repeat left 3px;padding-left:15px;}
+.n3 {background:url(../img/help/n03.gif) no-repeat left 3px;padding-left:15px;}
+.n4 {background:url(../img/help/n04.gif) no-repeat left 3px;padding-left:15px;}
+.n5 {background:url(../img/help/n05.gif) no-repeat left 3px;padding-left:15px;}
+.n6 {background:url(../img/help/n06.gif) no-repeat left 3px;padding-left:15px;}
+.n7 {background:url(../img/help/n07.gif) no-repeat left 3px;padding-left:15px;}
+.n8 {background:url(../img/help/n08.gif) no-repeat left 3px;padding-left:15px;}
+.n9 {background:url(../img/help/n09.gif) no-repeat left 3px;padding-left:15px;}
+.n10 {background:url(../img/help/n10.gif) no-repeat left 3px;padding-left:15px;}
+
+.cus_a {background:url(../img/help/img_a.gif) no-repeat left; min-height:77px; padding-left:90px; color:#579450; }
+.cus_q {background:url(../img/help/img_q.gif) no-repeat left; min-height:77px; padding-left:90px; }
+
+.page {color: #4e7b4a; text-align:left;}
+.page a:link {color: #4e7b4a;text-decoration:none;}
+.page a:visited {color: #4e7b4a;text-decoration:none;}
+.page a:hover {color: #888888;text-decoration:underline;}
+
+.dw a:link    {color:#636363; text-decoration:none;}
+.dw a:visited {color:#636363; text-decoration:none;}
+.dw a:hover   {color:#636363; text-decoration:underline;}

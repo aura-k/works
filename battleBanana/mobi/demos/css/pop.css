@@ -1,0 +1,29 @@
+/*공통*/
+body {margin:0px; border:none; font-size:12px; font-family:Dotum, Arial;}
+.input {background:none;border:0;display:inline;font-size:12px; outline-style:none;}
+.grey {color: #b2b2b2; text-align:left;}
+.yell {color: #b9953f; text-align:left;}
+.yell a:link {color: #b9953f;text-decoration:none;}
+.yell a:visited {color: #b9953f;text-decoration:none;}
+.yell a:hover {color: #b9953f;text-decoration:underline;}
+
+/*회원가입*/
+.agree a:link {color: #939393;text-decoration:none;}
+.agree a:visited {color: #939393;text-decoration:none;}
+.agree a:hover {color: #939393;text-decoration:underline;}
+
+/*바나나통장,상품주문내역*/
+.title {color: #303030; font-weight: bold; text-align:center;}
+.con {color: #303030; text-align:center;}
+.text_gr {color: #a3cc2c; font-weight: bold; text-align:center;}
+.text_grey {color: #878787; font-weight: bold; text-align:center;}
+.text_ye {color: #ffbb36; font-weight: bold; text-align:center;}
+.text_br {color: #303030; text-align:center;}
+.text_br a:link {color: #303030;text-decoration:none;}
+.text_br a:visited {color: #303030;text-decoration:none;}
+.text_br a:hover {color: #303030;text-decoration:underline;}
+.page {color: #b1b1b1; text-align:center;}
+.page a:link {color: #b1b1b1;text-decoration:none;}
+.page a:visited {color: #b1b1b1;text-decoration:none;}
+.page a:hover {color: #303030;text-decoration:none;}
+

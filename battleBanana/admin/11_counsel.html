@@ -1,0 +1,102 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='./js/script.js'></script>
+<style type="text/css">
+<!--
+body, table {font-size: 12px;12px;font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+.answer {margin:20px; padding:5px; background:#E7E7E7}
+-->
+</style>
+</head>
+
+<body>
+<? include "inc.html";?>
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">1:1상담 | 
+              <input name="input" type="text" />
+              <a href="#">검색</a></td>
+          </tr>
+        </table>
+		<?
+		  include "../php/connect.php";
+		  
+		  function pagecount(){
+			$sql=mysql_query("select COUNT(no) as cnt from BBanana_qnas") or die(mysql_error());
+			$row=mysql_fetch_array($sql);
+		    
+			return $row['cnt'];
+		  }
+		  $page_scale = 10;//한페이지당 보일 목록의 갯수
+		  if($_GET['p'] == null) $_GET['p'] = 0;
+
+		  $sql=mysql_query("select * from BBanana_qnas order by no DESC limit ".$_GET['p']*$page_scale.", ".$page_scale) or die(mysql_error()); 			
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+				
+			echo"<table width=\"100%\" border=\"0\" cellspacing=\"1\" cellpadding=\"7\" bgcolor=\"#333333\" style=\"margin-bottom:20px;\">
+          <tr bgcolor=\"#FFFFFF\">
+            <td width=\"10%\" class=\"c\">".$row['no']."</td>
+            <td width=\"20%\" class=\"c\">".$row['qna_cate']."</td>
+            <td width=\"40%\" class=\"c\">".$row['qna_title']."</td>
+            <td width=\"10%\" class=\"c\">".$row['user_id']."</td>
+            <td width=\"20%\" class=\"c\">".date('Y-m-d H:i:s', $row['qna_created'])."</td>
+          </tr>
+          <tr bgcolor=\"#FFFFFF\">
+            <td colspan=\"5\"><pre>".$row['qna_text']."</pre>";
+			  if($row['qna_answer'] == ""){
+              echo "<div id=\"answer".$row['no']."\" class=\"answer\"><textarea id=\"qna_description_".$row['no']."\" name=\"qna_description\" style=\"width:400px; height:100px;\"/></textarea><br>
+              <input type=\"button\" value=\"답변등록\" onclick=\"regist_answer(".$row['no'].")\"></div>
+              <p><input type=\"button\" value=\"질문삭제\" onclick=\"\"><br />
+              </p>";
+			  }else{
+				echo "<div id=\"answer".$row['no']."\"  class=\"answer\">Ans)  <pre>".$row['qna_answer']."</pre><br>(".date('m-d H:i:s', $row['ans_created']).")<br><input type=\"button\" value=\"답변수정\" onclick=\"load_answer(".$row['no'].")\"><input type=\"button\" value=\"답변삭제\" onclick=\"delete_answer(".$row['no'].")\"></div>
+              <p><input type=\"button\" value=\"질문삭제\" onclick=\"delete_quest(".$row['no'].")\"><br />
+              </p>";
+			  }
+			echo "</td>
+          </tr>
+        </table>";
+
+			$i++;
+			++$cnt;
+			}
+
+			 $qna_cnt = pagecount();
+			if ($qna_cnt%$page_scale == 0)    
+				  $qna_pcnt = floor($qna_cnt/$page_scale)-1;     
+			else
+			      $qna_pcnt = floor($qna_cnt/$page_scale);
+		  ?>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">
+			<?
+			for($i=0;$i<=$qna_pcnt;$i++)
+				echo "<a href=\"11_counsel.html?p=".$i."\">".($i+1)."</a>&nbsp;";
+			mysql_close($connect);
+			?>
+			</td>
+          </tr>
+        </table>
+</td>
+      </tr>
+    </table>
+</body>
+</html>

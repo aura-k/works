@@ -1,0 +1,68 @@
+<? include "help_inc.html"; ?>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="165" height="60"></td>
+    <td></td>
+    <td width="30"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>
+    <!--내용시작-->
+    	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <!--copy-->
+          <tr>
+            <td class="content">
+                <table width="95%" border="0" cellpadding="0" cellspacing="0" bgcolor="#e6f0dc">
+                  <tr>
+                    <td><img src="../img/help/lt.gif"/></td>
+                    <td></td>
+                    <td align="right"><img src="../img/help/rt.gif" /></td>
+                  </tr>
+                  <tr>
+                    <td width="70" height="30" align="center">제목</td>
+                    <td><input type="text" name="custumer_name" id="custumer_name" style="width:95%;"/></td>
+                     <td width="150" rowspan="2"><img src="../img/help/btn_q.gif" onclick="regist_customer()" style="cursor:pointer"/></td>
+                  </tr>
+                  <tr>
+                    <td width="70" align="center">내용</td>
+                    <td><textarea type="text" name="custumer" id="custumer" style="width:95%; height:100px;"></textarea></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../img/help/lb.gif" /></td>
+                    <td></td>
+                    <td align="right"><img src="../img/help/rb.gif" /></td>
+                  </tr>
+                </table>
+                <table width="95%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="50">&nbsp;</td>
+                    <td><img src="../img/help/img_tip.gif" /></td>
+                  </tr>
+                </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="boundary"></td>
+          </tr>
+		  <tr>
+		  <td>
+		  <div id="insert_customer">
+		  <!--copy-->
+		  
+		  <!--copy-->
+		  </div>
+		  </td>
+		  </tr>
+        </table>
+    <!--내용끝-->
+    </td>
+    <td></td>
+  </tr>
+</table>
+<script>
+	load_customer(1);
+</script>
+</body>
+</html>

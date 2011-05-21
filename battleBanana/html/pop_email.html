@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>배틀바나나</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/pop.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="myForm">
+<?
+	include "../php/connect.php";
+	$sql=mysql_query("select * from BBanana_items where item_id = '".$_GET['sid']."'") or die(mysql_error()); 
+	$row=mysql_fetch_array($sql);
+
+?>
+<table width="440" border="0" cellpadding="0" cellspacing="3" bgcolor="#111111">
+  <tr>
+    <td bgcolor="#FFFFFF">
+        <table width="434" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td bgcolor="#111111">
+            	<table width="434" border="0" cellpadding="15" cellspacing="0">
+                  <tr>
+                    <td><img src="../img/pop/img_send_email.gif" / border="0"></td>
+                    <td align="right"><a href="#" onclick="closeDialogByDom()"><img src="../img/pop/btn_x.gif" name="btn_x" id="btn_x" onmouseover="javascript:btn_x.src='../img/pop/btn_x_o.gif';" onmouseup="javascript:btn_x.src='../img/pop/btn_x_o.gif';" onmouseout="javascript:btn_x.src='../img/pop/btn_x.gif';" onmousedown="javascript:btn_x.src='../img/pop/btn_x_c.gif';" border="0"/></a></td>
+                  </tr>
+                </table>
+                <table width="434" border="0" cellpadding="0" cellspacing="0" >
+                  <tr>
+                    <td class="grey">
+                        <table width="400" border="0" cellspacing="0" cellpadding="0" style="margin:0px 0px 20px 15px;">
+                          <tr>
+                            <td><?=$row['item_fname']?></td>
+                          </tr>
+                        </table>
+                    </td>
+                  </tr>
+                </table>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            	<table width="400" border="0" cellspacing="0" cellpadding="0" style="margin:15px 15px 15px 15px;">
+                  <tr>
+                    <td>
+                     <table width="390" border="0" cellspacing="0" align="center">
+                        <tr>
+                          <td width="98" height="34" align="right"><img src="../img/pop/img_receiver_email.gif" /></td>
+                          <td width="8" background="../img/pop/bg_input_l.gif"></td>
+                          <td background="../img/pop/bg_input_c.gif"><input name="email" type="text" class="input" id="email" style="width:215px" onFocus="checkemail_normal()" onBlur="checkemail_normal();onBlurLayer('email');" onKeyUp="checkemail_normal()"/></td>
+                          <td width="8" background="../img/pop/bg_input_r.gif"></td>
+                          <td width="50" align="right"><div id="email_layer"><img src="../img/pop/img_conf_x.gif" /></div></td>
+						  <tr><td colspan="2"></td><td><div id="email_layer2" style="text-align:right;"></div></td><td colspan="2"></td></tr>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td>
+                    	<table width="390" border="0" cellspacing="0" align="center">
+                        <tr>
+                          <td width="98" height="34" align="right"><img src="../img/pop/img_comment2.gif" /></td>
+                          <td width="8" background="../img/pop/bg_input_l.gif"></td>
+                          <td background="../img/pop/bg_input_c.gif"><input name="comment" type="text" class="input" id="comment" style="width:215px" /></td>
+                          <td width="8" background="../img/pop/bg_input_r.gif"></td>
+                          <td width="50" align="right">&nbsp;</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td>
+                    </td>
+                  </tr>
+                </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#eeeeee" height="56" align="center"><a href="#" onclick="toEmail()"><img src="../img/pop/btn_ok.gif" name="btn_ok" id="btn_ok" onmouseover="javascript:btn_ok.src='../img/pop/btn_ok_o.gif';" onmouseout="javascript:btn_ok.src='../img/pop/btn_ok.gif';" border="0"/></a>&nbsp;&nbsp;<a href="#" onclick="closeDialogByDom()"><img src="../img/pop/btn_cancel.gif" name="btn_cancel" id="btn_cancel" onmouseover="javascript:btn_cancel.src='../img/pop/btn_cancel_o.gif';" onmouseout="javascript:btn_cancel.src='../img/pop/btn_cancel.gif';" border="0"/></a></td>
+          </tr>
+        </table>
+	</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<input type="hidden" id="name_layer" value="<?=$row['item_fname']?>"/>
+<input type="hidden" id="e_sid_layer" value="<?=$_GET['sid']?>"/>
+</div>
+</body>
+</html>

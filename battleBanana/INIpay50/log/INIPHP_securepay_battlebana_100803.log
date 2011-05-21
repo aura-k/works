@@ -1,0 +1,214 @@
+INFO	[2010-08-03 23:52:51:146] <2721> START INIPHP chkfake (V5030-091216)(OS:Linux2.6.18-164.15.1.el5PAE,PHP:5.2.0)
+DEBUG	[2010-08-03 23:52:51:146] <2721> inipayhome:/home/banana/public_html/INIpay50/
+DEBUG	[2010-08-03 23:52:51:146] <2721> type:chkfake
+DEBUG	[2010-08-03 23:52:51:146] <2721> debug:true
+DEBUG	[2010-08-03 23:52:51:146] <2721> enctype:asym
+DEBUG	[2010-08-03 23:52:51:146] <2721> admin:1111
+DEBUG	[2010-08-03 23:52:51:146] <2721> checkopt:false
+DEBUG	[2010-08-03 23:52:51:146] <2721> mid:battlebana
+DEBUG	[2010-08-03 23:52:51:146] <2721> price:1000
+DEBUG	[2010-08-03 23:52:51:146] <2721> nointerest:no
+DEBUG	[2010-08-03 23:52:51:146] <2721> quotabase:선택:일시불:2개월:3개월:6개월
+INFO	[2010-08-03 23:52:51:146] <2721> Check Field OK
+INFO	[2010-08-03 23:52:51:146] <2721> MERCHANT PRIV KEY LOAD OK
+INFO	[2010-08-03 23:52:51:147] <2721> MERCHANT PUB KEY LOAD OK []
+INFO	[2010-08-03 23:52:51:149] <2721> CHKFAKE KEY MAKE OK:MjAxMDA4MDMyMzUyNTExNDczMTAzOA==
+
+INFO	[2010-08-03 23:52:51:149] <2721> END chkfake  Laptime:[0sec]
+INFO	[2010-08-03 23:52:51:149] <2721> ===============================================================
+INFO	[2010-08-03 23:53:11:958] <2487> START INIPHP securepay (V5030-091216)(OS:Linux2.6.18-164.15.1.el5PAE,PHP:5.2.0)
+DEBUG	[2010-08-03 23:53:11:958] <2487> inipayhome:/home/banana/public_html/INIpay50/
+DEBUG	[2010-08-03 23:53:11:958] <2487> type:securepay
+DEBUG	[2010-08-03 23:53:11:958] <2487> pgid:INIphpVBNK
+DEBUG	[2010-08-03 23:53:11:958] <2487> subpgip:203.238.3.10
+DEBUG	[2010-08-03 23:53:11:958] <2487> admin:1111
+DEBUG	[2010-08-03 23:53:11:958] <2487> debug:true
+DEBUG	[2010-08-03 23:53:11:958] <2487> uid:
+DEBUG	[2010-08-03 23:53:11:958] <2487> goodname:바나나충전 (2000개)
+DEBUG	[2010-08-03 23:53:11:958] <2487> currency:WON
+DEBUG	[2010-08-03 23:53:11:958] <2487> mid:battlebana
+DEBUG	[2010-08-03 23:53:11:958] <2487> rn:MjAxMDA4MDMyMzUyNTExNDczMTAzOA==
+
+DEBUG	[2010-08-03 23:53:11:958] <2487> price:1000
+DEBUG	[2010-08-03 23:53:11:958] <2487> enctype:
+DEBUG	[2010-08-03 23:53:11:958] <2487> buyername:김윤성
+DEBUG	[2010-08-03 23:53:11:958] <2487> buyertel:01092899889
+DEBUG	[2010-08-03 23:53:11:958] <2487> buyeremail:ke2n@naver.com
+DEBUG	[2010-08-03 23:53:11:958] <2487> paymethod:VBank
+DEBUG	[2010-08-03 23:53:11:958] <2487> encrypted:Version=4.1&PayMethod=VBank&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=B_128084717178&ver_trace=main(6035,6024)vbank(6017,6018)net(6008)Cons(6012)Dat(6002)Par(6002)Conf(6020)Fve(0000)Lan(6049)Res(6021)Ver(6005)Paycrypt(6021)&pg1=203.238.37.3&pg2=211.219.96.180&pg1ip=203.238.37.3&pg2ip=211.219.96.180&Data=siMYjydRcSWja8ui+avrrJcbFXUgl7YlaoNsBuKZhKa3QHRu0usY3FCLu4eeXMCz
+PauiKxnOz3Iwwl28gSNpA01hHmNZqKkJvFZwHykq+Hge44m3KQtg9XE/bF9L1NKO
+iYsSPkpes0phR64LNkUzxefcXzzfNDPAgmWucQEXA6xdqUMCy4YRslcHs68r1oi3
+Gud0gglLJ5HcbN1sJjAG3oDVSsSVCvUcYMD0BIOv1/MPBOouvuCOVESL2c4rvzUp
+927su1MU8KzD0wRtIfTvXixzaaYD67O21akABItFMygl1KLW5TRU/+UAnDIBLPdh
+UbdnhAXVG+PFWf3isu3JRqY0essNmgo/eYmSaXShs+LsPFhGKA6YefZehowd7DpY
+fUs26/0yr3oIu4ROlO0Z88lKRE46YLI9oxaRgsi7qdYIYOXWk+tA9+9LY9IhJ+qN
+h85cjpgvJ2f/sgW7fV8WXK1qSPkPLGFI4QzPfA==
+
+DEBUG	[2010-08-03 23:53:11:958] <2487> sessionkey:g+ZQH/QYgik5hVc/BqR/9GpmaHolN4f+RQRIosNi4Iq+RrOXSKDmJkCwJ8u11o+6
+q7qP+Ebg2lybDiA+OaMAT/H8QF8hgCJD6ol1vAOnf6tih+JiL+r1BzVun5/q3tsd
+c0ZdXb8Sfun9Yf7V13qCl1YC7yMb94433Oo8V0Vyu7Y=
+
+DEBUG	[2010-08-03 23:53:11:958] <2487> url:http://www.battlebanana.com
+DEBUG	[2010-08-03 23:53:11:958] <2487> cardcode:
+DEBUG	[2010-08-03 23:53:11:958] <2487> parentemail:
+DEBUG	[2010-08-03 23:53:11:958] <2487> recvname:
+DEBUG	[2010-08-03 23:53:11:958] <2487> recvtel:
+DEBUG	[2010-08-03 23:53:11:958] <2487> recvaddr:
+DEBUG	[2010-08-03 23:53:11:958] <2487> recvpostnum:
+DEBUG	[2010-08-03 23:53:11:958] <2487> recvmsg:
+DEBUG	[2010-08-03 23:53:11:958] <2487> joincard:
+DEBUG	[2010-08-03 23:53:11:958] <2487> joinexpire:
+DEBUG	[2010-08-03 23:53:11:958] <2487> id_customer:
+INFO	[2010-08-03 23:53:11:958] <2487> Check Field OK
+INFO	[2010-08-03 23:53:11:958] <2487> Make TID OK INIphpVBNKbattlebana20100803235311958978
+INFO	[2010-08-03 23:53:11:958] <2487> PI PUB KEY LOAD OK [39]
+INFO	[2010-08-03 23:53:11:959] <2487> PG PUB KEY LOAD OK [30]
+INFO	[2010-08-03 23:53:11:959] <2487> MERCHANT PRIV KEY LOAD OK
+INFO	[2010-08-03 23:53:11:959] <2487> MERCHANT PUB KEY LOAD OK [0]
+INFO	[2010-08-03 23:53:11:961] <2487> MAKE BODY OK
+INFO	[2010-08-03 23:53:11:963] <2487> SIGN OK
+INFO	[2010-08-03 23:53:11:963] <2487> MAKE HEAD OK
+INFO	[2010-08-03 23:53:11:963] <2487> MSG_TO_PG:[0245400175R SHA1                   0                  39                  300200battlebana                1000INIphpVBNKbattlebana20100803235311958978<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <GoodsInfo>
+	    <GoodsCnt>1</GoodsCnt>
+	    <MOID/>
+	    <Currency>WON</Currency>
+	    <Goods>
+	      <SMID>battlebana</SMID>
+	      <GoodsName urlencode="1">%B9%D9%B3%AA%B3%AA%C3%E6%C0%FC+%282000%B0%B3%29</GoodsName>
+	      <GoodsPrice>1000</GoodsPrice></Goods></GoodsInfo>
+	  <BuyerInfo>
+	    <BuyerName urlencode="1">%B1%E8%C0%B1%BC%BA</BuyerName>
+	    <BuyerTel>01092899889</BuyerTel>
+	    <BuyerEmail urlencode="1">ke2n%40naver.com</BuyerEmail>
+	    <ParentEmail/>
+	    <RecvName/>
+	    <RecvTel/>
+	    <RecvMsg/>
+	    <RecvAddr/>
+	    <RecvPostNum/></BuyerInfo>
+	  <PaymentInfo>
+	    <Payment>
+	      <PayMethod>VBank</PayMethod>
+	      <JoinCard/>
+	      <JoinExpire/>
+	      <MailOrder/>
+	      <SessionKey>g+ZQH/QYgik5hVc/BqR/9GpmaHolN4f+RQRIosNi4Iq+RrOXSKDmJkCwJ8u11o+6
+q7qP+Ebg2lybDiA+OaMAT/H8QF8hgCJD6ol1vAOnf6tih+JiL+r1BzVun5/q3tsd
+c0ZdXb8Sfun9Yf7V13qCl1YC7yMb94433Oo8V0Vyu7Y=
+</SessionKey>
+	      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DVBank%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3DB_128084717178%26ver_trace%3Dmain%286035%2C6024%29vbank%286017%2C6018%29net%286008%29Cons%286012%29Dat%286002%29Par%286002%29Conf%286020%29Fve%280000%29Lan%286049%29Res%286021%29Ver%286005%29Paycrypt%286021%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26Data%3DsiMYjydRcSWja8ui%2BavrrJcbFXUgl7YlaoNsBuKZhKa3QHRu0usY3FCLu4eeXMCz%0D%0APauiKxnOz3Iwwl28gSNpA01hHmNZqKkJvFZwHykq%2BHge44m3KQtg9XE%2FbF9L1NKO%0D%0AiYsSPkpes0phR64LNkUzxefcXzzfNDPAgmWucQEXA6xdqUMCy4YRslcHs68r1oi3%0D%0AGud0gglLJ5HcbN1sJjAG3oDVSsSVCvUcYMD0BIOv1%2FMPBOouvuCOVESL2c4rvzUp%0D%0A927su1MU8KzD0wRtIfTvXixzaaYD67O21akABItFMygl1KLW5TRU%2F%2BUAnDIBLPdh%0D%0AUbdnhAXVG%2BPFWf3isu3JRqY0essNmgo%2FeYmSaXShs%2BLsPFhGKA6YefZehowd7DpY%0D%0AfUs26%2F0yr3oIu4ROlO0Z88lKRE46YLI9oxaRgsi7qdYIYOXWk%2BtA9%2B9LY9IhJ%2BqN%0D%0Ah85cjpgvJ2f%2FsgW7fV8WXK1qSPkPLGFI4QzPfA%3D%3D%0D%0A</Encrypted></Payment></PaymentInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL urlencode="1">http%3A%2F%2Fwww.battlebanana.com</URL>
+	    <TXVersion>5030B091216securLinux     PHPchkfake   2.6.18-164.15.1.el5PAEPHP:5.2.</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/>
+	    <Ack>1</Ack>
+	    <TXRN>MjAxMDA4MDMyMzUyNTExNDczMTAzOA==
+</TXRN></ManageInfo></INIpay>AMNT5B35HrKMcUOlODscB/kiNFyGqWX5dE/ynjxJLwtSM4V1GD/fyR709Mj/PM0b
+DmXkZUK9tNHEWzK5rOkdOXz52xuYICiv0c9IScJnQ3tO3l9wYDzivz9bzJBEV9gr
+hBAsoULMGFCU4meWxFsNZDk5RN3FKq9xtrBJVCX6qtbn
+]
+INFO	[2010-08-03 23:53:11:964] <2487> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2010-08-03 23:53:11:968] <2487> SOCKET CONNECT OK
+INFO	[2010-08-03 23:53:11:968] <2487> SEND OK
+INFO	[2010-08-03 23:53:12:226] <2487> RECV OK
+INFO	[2010-08-03 23:53:12:226] <2487> MSG_FROM_PG:[0251800175D SHA1                   0                  39                  300210battlebana                1000INIphpVBNKbattlebana20100803235311958978<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt>1</GoodsCnt>
+    <MOID urlencode="1">B_128084717178</MOID>
+    <Currency>WON</Currency>
+    <Goods no="1">
+      <SMID>battlebana</SMID>
+      <GoodsName urlencode="1">%B9%D9%B3%AA%B3%AA%C3%E6%C0%FC+%282000%B0%B3%29</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>1000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <PaymentInfo>
+    <Payment>
+      <SessionKey>AJfR9WSVKNYmC5woNwYY0wwZW/ZcRH/AMEDxmmj0I/E2eFYzcIXjrNzkmKn7iRPj
+RZmjiL6a4bT0NPndjo6EEEfpXd2+zHHW/2IUNEhSNQx4BGG1SWLdjdHkvE+LGS1X
+oZFHg0Ybxp5R6yo7YxQaubOm6xbh1xGhUw/IdZjxO5Pit6DnNRn3TcU=
+</SessionKey>
+      <Encrypted>qDZU04He2VPMqd/uxBL6gZ9LK/avstaf5bfRnc7B/pw49d0YnXeQNQ/O1kit5vYT
+OAzJRL370N5Q8klDPqd2Ev5LViVO3SwdICvQSL3wqE/Nvp52GvV0fnuj/uJGRDRQ
+m7dOfpEiipMK+H1XnOddBRS+mEomkOV3wnI+E4pf2W5Iq277VV4aq2Rpyz0pHnOa
+fFZlJkgOKZIocEv71ulxWBPx5nPonINNR/m5vJY85N0Pdd2NLpkDp8YxITZAZuJM
+pbf9G1siYF1lq4z77o1B+dVqPhWe9y2Z9UL3+jar2ORV4PS/04HFi+W468Z9POU7
+JWlb3gYpYygG+yj7mzasCOyNiok9zFz8+u3MAhfsP1SJZmVHM0ugJ/AAC1pcoVKu
+b5xAZvj+lZ3SaPjl84y3SMzjRYLUGaywLOECstk8BnnCtttychpyfiJqQU4yPmlV
+T4290VFg6nSP2ofxLQQXsx+J46q5dlDg9GxAR0lZcQZvQxMJT4fDbAbN25+/T4E0
+lt/vFTEnJXeoxc1Mu/Hnubs1MZD3jrDocr6dlzwzl7dLy2uZYB6YqTrpzifautDs
++ogBYFLcthyulWkPxqNdGLcWHID1ueNWBP9/A3s7fFCEGBf/jyH4kIW/qKlEH2Cl
+0YpxGytYyWGPyKhP5c71Vrz5MBbzOCbU4q8kQdkr+XXxbhLy/ZDKpv2+Ug9OIthc
+LVWOB6fRoE6V9WavZW2bVGXsy4GoeJtwKjoNWZ9bxN9tbupchn41WOkameqKrNb/
+BHyRmeRv2mI2wZEuVg/bYT01+2/koGcWzRnKd6/EycsXEEWiubvnzwRoSoXNR8e2
+qcYHlCVDz/YEKP/OLkgrj10FzQiR8fk8jFI1uYB+fNRwLpoMVm31+Xl6uNMZQyua
+yEa5PD9EkiJpOx87s4iajuoRY/EHbhCo9RjXKFq7BdlP4NnY1Lv2npNXRhfDT/qg
+5bh38X7VI1Uumw6rt0rQ2xqkcQd5VFShpYMvNfZcnJaAUxDD8Ln0goAIW7mYoA3D
+c0Zym2OSxxskvdEBo9q1Dxg37ucThWPzdEyt5JSbb0fo3Z64efXqKeCSYGNbuXMz
+10pv3u9yDUTXQUW/JUd2ut0gBipwsRzZx7duNjwfp+0DVBG+ix65ekDo3eBRiBSz
+</Encrypted>
+      <PayMethod>VBank</PayMethod>
+      <ResultCode>170000</ResultCode>
+      <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <EventCode></EventCode>
+    <OrgCurrency></OrgCurrency>
+    <ExchangeRate></ExchangeRate>
+    <OrgPrice></OrgPrice>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+RJJV3/XEEvvX+7D/qIj0662icZJFiCjpL5Y2GQy+b0aOhlhySG+n654v+n6ZUv6K
+ze9/otPz/OeHVIEUdPnzA/81WPhyvXeispmNkKG6jHM/8OfH4BFeuqAfdh/emTrT
+LFlqWXH0zrQNkNAErzm2dIOTlQh/hl4Xnxhyva2OLnY=
+]
+INFO	[2010-08-03 23:53:12:226] <2487> VERIFY OK
+INFO	[2010-08-03 23:53:12:226] <2487> PARSE HEAD OK
+INFO	[2010-08-03 23:53:12:228] <2487> PARSE BODY OK
+INFO	[2010-08-03 23:53:12:232] <2487> DECRYPT OK
+DEBUG	[2010-08-03 23:53:12:232] <2487> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+  <Payment>
+    <VBank>
+      <VACT_Num>01442564342438</VACT_Num>
+      <VACT_BankCode>11</VACT_BankCode>
+      <VACT_Date>20100803</VACT_Date>
+      <VACT_Time></VACT_Time>
+      <VACT_InputName urlencode="1">%B1%E8%C0%B1%BC%BA</VACT_InputName>
+      <VACT_Name urlencode="1">%B8%F9%C5%B0%BA%EA%B6%F3%B4%F5%BD%BA</VACT_Name>
+      <VACT_RefundName urlencode="1"></VACT_RefundName>
+      <VACT_RefundBankCode></VACT_RefundBankCode>
+      <VACT_RefundNum></VACT_RefundNum>
+      <VACT_ApplPrice>1000</VACT_ApplPrice>
+      <VACT_ApplDate>20100803</VACT_ApplDate>
+      <VACT_ApplTime>235315</VACT_ApplTime>
+      <VACT_ResultCode>170000</VACT_ResultCode>
+      <VACT_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</VACT_ResultMsg>
+    </VBank>
+  </Payment>
+</PaymentInfo>]
+INFO	[2010-08-03 23:53:12:233] <2487> DECRYPT PARSE OK
+INFO	[2010-08-03 23:53:12:233] <2487> WAIT ACK INVOKING
+DEBUG	[2010-08-03 23:53:12:233] <2487> MAKE HEAD OK
+INFO	[2010-08-03 23:53:12:236] <2487> SUCCESS ACK INVOKING
+INFO	[2010-08-03 23:53:12:236] <2487> END securepay 정상처리되었습니다. Laptime:[0.28sec]
+INFO	[2010-08-03 23:53:12:237] <2487> ===============================================================
