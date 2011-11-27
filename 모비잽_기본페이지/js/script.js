@@ -28,7 +28,7 @@ function goAction(){
 		checkRe = true;	
 		$.post("mail_post.php", postVal, function(data){
 			if(data == "ok"){
-				alert("문의가 정상적으로 완료 되었습니다.");
+				alert("문의가 정상적으로 완료 되었습니다.");ㅁ
 				location.reload();
 			}else{
 				alert("오류가 발생하였습니다.\n다시 한번 시도하여 주세요.");
