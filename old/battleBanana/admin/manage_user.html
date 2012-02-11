@@ -1,0 +1,122 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body, table {font-size: 12px;font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+-->
+</style>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='./js/script.js'></script>
+</head>
+
+<body>
+<? include "inc.html";?>
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">회원관리 |<select name="search" id="search" style="width:150px">
+                        								<option value="00">전체</option>
+                                                        <option value="01">회원번호</option>
+                                                        <option value="02">아이디</option>
+                                                        <option value="03">이름</option>
+                                                        <option value="04">주민번호</option>
+                                                         <option value="05">이메일</option>
+                                                      </select>  <input name="" type="text" />
+              <a href="#">검색</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#333333" style="margin-bottom:20px;">
+          <tr bgcolor="#FFFFFF">
+            <td width="5%" height="30px;"><b><a href="#">회원번호</a></b></td>
+            <td width="8%" class="c"><b><a href="#">아이디</a></b></td>
+            <td width="7%" class="c"><b><a href="#">이름</a></b></td>
+            <td width="10%" class="c"><b><a href="#">주민번호</a></b></td>
+            <td width="15%" class="c"><b><a href="#">이메일</a></b></td>
+			<td width="8%" class="c"><b><a href="#">추천인</a></b></td>
+            <td width="10%" class="c"><b><a href="#">가입일</a></b></td>
+			<td width="10%" class="c"><b><a href="#">접속일</a></b></td>
+            <td width="5%" class="c"><b><a href="#">로그인수</a></b></td>
+            <td width="8%" class="c"><b><a href="#">보유바나나</a></b></td>
+            <td width="8%" class="c"><b><a href="#">IP</a></b></td>
+          </tr>
+		  <?
+		  include "../php/connect.php";
+		  
+		  function pagecount($id){
+			$sql=mysql_query("select COUNT(no) as cnt from BBanana_users") or die(mysql_error());
+			$row=mysql_fetch_array($sql);
+		    
+			return $row['cnt'];
+		  }
+		  
+		  if($_GET['p'] == null) $_GET['p'] = 1;
+
+		  $sql=mysql_query("select * from BBanana_users order by no DESC limit ".(($_GET['p']-1)*20).", 20") or die(mysql_error()); 			
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+			$str2 = "SELECT SUM( banana_out ) AS cnt FROM `BBanana_bananas` WHERE user_id =  '".$row['user_id']."' AND  `item_id` NOT LIKE 'B%'"; 
+			$sql2=mysql_query($str2);
+			$row2=mysql_fetch_array($sql2);
+			if($row['is_reco'] == 'yes')
+				$recommend_html = "<div style='color:grey'>".$row['recommend_id']."</div>";
+			else
+				$recommend_html = "<div onclick='recommendAction(\"".$row['user_id']."\", \"".$row['recommend_id']."\")' style='cursor:pointer'>".$row['recommend_id']."</div>";
+
+			if($row['activate'] == 'no')
+				$active_html = "#9B9B9B";
+			else
+				$active_html = "#FFFFFF";
+
+			echo"<tr bgcolor='".$active_html."'>
+            <td class='c'>".$row['no']."</td>
+            <td class='c'>".$row['user_id']."</td>
+            <td class='c'>".$row['user_name']."</td>
+            <td class='c'>".$row['regi_number']."</td>
+            <td class='c'>".$row['email']."</td>
+			<td class='c'>".$recommend_html."</td>
+            <td class='c'>".$row['created']."</td>
+			<td class='c'><div style='cursor:help' title='최근 로그IP : ".$row['ipnum']."' alt='최근 로그IP : ".$row['ipnum']."'>".$row['lately_loged']."</td>
+            <td class='c'>".$row['cnt']."</td>
+            <td class='r'><a href='#' onclick='openWin(\"04_manage_user_purchased_banana\", \"".$row['user_id']."\")'>".$row['banana']."</a></td>
+            <td class='r'><a href='#' onclick='openWin(\"manage_user_ipnum\", \"".$row['user_id']."\")'>".$row['ipnum']."</a></td>
+          </tr>";
+
+			$i++;
+			++$cnt;
+			}
+			
+			 $page_cnt = pagecount($_GET['sid']);
+			 $page_cnt = intval($page_cnt/20);
+		  ?>
+          
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">
+			<?
+			for($i=0;$i<=$page_cnt;$i++)
+				echo "<a href=\"manage_user.html?p=".($i+1)."\">".($i+1)."</a>&nbsp;";
+			mysql_close($connect);
+			?>
+			</td>
+          </tr>
+        </table>
+</td>
+      </tr>
+    </table>
+</body>
+</html>

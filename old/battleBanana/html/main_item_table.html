@@ -1,0 +1,9 @@
+<?
+	include "../php/mainAction.php";
+	
+		
+	if($_GET['close'])
+		closeditem_pagenation($_GET['p'], $_GET['close']);
+	else
+		mainitem_pagenation($_GET['p'], $_GET['op'], $_GET['cate']);
+?>

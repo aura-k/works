@@ -1,0 +1,1 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="_________________query.aspx.cs" Inherits="log" %>

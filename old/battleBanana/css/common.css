@@ -1,0 +1,281 @@
+/*메인,서브*/
+body {margin:0px; border:none; font-size:12px; font-family:Dotum, Arial;}
+.float {position:fixed; z-index:1000; left:0; top:0; width:80px; border:solid 1px #bbbbbb; height:100%; background-image:url(../img/bg_tool.gif)}
+.text_tool {color: #545454; font-weight: bold; text-align:center;}
+
+.box_text {color: #303030; font-weight: bold; text-align:left;}
+.box_text a:link  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_text a:visited  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_text a:hover  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_title {color: #303030; font-weight: bold; text-align:left;}
+.box_title a:link  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_title a:visited  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_title a:hover  {color: #303030; font-weight: bold; text-align:left; text-decoration:none;}
+.box_time_text {color: #303030; font-size:18px; font-family:"Arial Black","돋움";font-weight:bold;text-align:center;}
+.box_price_text {color: #ffa836; font-size:18px; font-family:"Arial Black";text-align:center;}
+.box_id_text {color: #878787; font-weight: bold;text-align:center;}
+.copyright {color: #bdbdbd; font-size:12px}
+.copyright a:link    {color: #bdbdbd; text-decoration:none; }
+.copyright a:visited {color: #bdbdbd; text-decoration:none; }
+.copyright a:hover   {color: #8a8a8a; text-decoration:underline; }
+
+/*메인*/
+.news {color: #888888; text-align:left;}
+.news a:link    {color: #888888; text-decoration:none; }
+.news a:visited {color: #888888; text-decoration:none; }
+.news a:hover   {color: #888888; text-decoration:underline; }
+.score_yellow {color: #ffbb36; text-align:left;}
+.score_grey {color: #e2e2e2; text-decoration:none;}
+.score_grey a:link {color: #e2e2e2; text-decoration:none;}
+.score_grey a:visited {color: #e2e2e2; text-decoration:none;}
+.score_grey a:hover {color: #e2e2e2;text-decoration:underline;}
+.score_yellow_r {color: #ffbb36; text-align:right;}
+.score_grey_r {color: #e2e2e2; font-weight: bold; text-align:right;}
+
+/*서브*/
+.title_sub {font-size:18px; color: #cecece;font-weight: bold; text-align:center;}
+.his_y {font-size:12px;color:#d8a644;}
+.his_w {font-size:12px;color:#b0b0b0;}
+.his_g {font-size:12px;color:#5e5e5e;}
+.now_win {font-size:15px;color:#cecece;font-weight: bold;}
+.price {color: #f0efef; font-size:23px; font-family:Arial Black;text-align:right;}
+.now_price {color: #ffbb36; font-size:23px; font-family:Arial Black;text-align:right;}
+.reward_price {color: #a3cc2c; font-size:23px; font-family:Arial Black;text-align:right;}
+.time {color: #f5f5f5; font-size:39px; font-family:Arial Black;}
+.cate {color: #919191;}
+.cate a:link {color: #919191;text-decoration:none;}
+.cate a:visited {color: #919191; text-decoration:none;}
+.cate a:hover {color: #565656; text-decoration:none;}
+
+/*공통*/
+.input {background:white;border:0;display:inline;font-size:12px;outline-style:none;}
+.grey {color: #b2b2b2; text-align:left;}
+.yell {color: #b9953f; text-align:left;}
+.yell a:link {color: #b9953f;text-decoration:none;}
+.yell a:visited {color: #b9953f;text-decoration:none;}
+.yell a:hover {color: #b9953f;text-decoration:underline;}
+
+/*회원가입*/
+.agree a:link {color: #939393;text-decoration:none;}
+.agree a:visited {color: #939393;text-decoration:none;}
+.agree a:hover {color: #939393;text-decoration:underline;}
+
+/*바나나통장,상품주문내역*/
+.title {color: #303030; font-weight: bold; text-align:center;}
+.con {color: #303030; text-align:center;}
+.text_gr {color: #a3cc2c; font-weight: bold; text-align:center;}
+.text_grey {color: #878787; font-weight: bold; text-align:center;}
+.text_ye {color: #ffbb36; font-weight: bold; text-align:center;}
+.text_gr_ship {color: #a3cc2c; font-weight: bold; text-align:right;}
+.text_grey_ship {color: #878787; font-weight: bold; text-align:right;}
+.text_ye_ship {color: #ffbb36; font-weight: bold; text-align:right;}
+.text_charge {color: #ffcc68; text-align:center;}
+.text_br {color: #303030; text-align:left; padding-left:5px;}
+.text_br a:link {color: #303030;text-decoration:none;}
+.text_br a:visited {color: #303030;text-decoration:none;}
+.text_br a:hover {color: #303030;text-decoration:underline;}
+.page {color: #b1b1b1; text-align:center;}
+.page a:link {color: #b1b1b1;text-decoration:none;}
+.page a:visited {color: #b1b1b1;text-decoration:none;}
+.page a:hover {color: #303030;text-decoration:none;}
+.banana_price {color: #ffffff; font-size:23px; font-family:Arial Black;text-align:right;}
+.banana_num {color: #ffbb36; font-size:23px; font-family:Arial Black;text-align:center;}
+.bonus_num {color: #fb6834; font-size:23px; font-family:Arial Black;text-align:center;}
+
+/*메인 아이템박스*/
+.box_bg {width:320px; height:172px; background:url('../img/bg_box.gif'); background-repeat:no-repeat; float:left; margin:5px; position:relative; z-index:100;}
+.box_bg_closed {width:320px; height:172px; background:url('../img/bg_box_closed.gif'); background-repeat:no-repeat; float:left; margin:5px; position:relative; z-index:100;}
+.box_bg_win {width:320px; height:172px; background:url('../img/bg_box_winner.jpg');background-repeat:no-repeat; float:left; margin:5px;}
+.box_padding {width:290px; height:142px; padding:15px;}
+.box_title {width:290px; color: #303030; font-size:12px; font-weight: bold; text-align:left; margin-bottom:6px;}
+.box_del {position:absolute; z-index:10; right:0; top:0; width:40px; height:40px;}
+.box_item_img {width:122px; float:left; border:1px solid #8F8F8F;}
+.box_time {width:130px; padding-top:11px; height:26px; float:right; color: #303030; font-size:18px; font-family:Arial Black;text-align:center;}
+.box_price {width:130px; padding-top:11px; height:26px; float:right; color: #ffa836; font-size:18px; font-family:Arial Black;text-align:center;}
+.box_id {width:130px; padding-top:18px; font-size:12px; height:19px; float:right; color: #878787; font-weight:bold; text-align:center;}
+
+/*뉴스 나오는 부분*/
+#scrollup {position: relative;overflow:hidden;height: 25px;width: 500px}
+.headline {position: absolute;top:25px;left: 5px;height: 195px;width:500px;}
+
+/*툴팁*/
+#battleButton_tooltip {
+	position: absolute;
+	display: none;
+	z-index: 10;
+	font-size: 3px;
+	margin:40px 0 0 -258px;
+}
+#battleButton_tooltip .tip {
+	vertical-align: top;
+	background-color: #FFFFFF;
+}
+#battleButton_tooltip .content {
+	padding: 7px 0 0 0;
+	font-size: 12px;
+	cursor:default;
+	line-height:1.3em;
+	text-align:left;
+}
+#battleButton_tooltip .leftTop {
+	font-size: 3px;
+	height: 20px;
+	width: 20px;
+	background-image: url(leftTop.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .rightTop {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(rightTop.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .leftBottom {
+	font-size: 3px;
+	height: 20px;
+	width: 20px;
+	background-image: url(leftBottom.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .rightBottom {
+	font-size: 3px;
+	background-image: url(rightBottom.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .arrow {
+	height: 20px;
+	width: 60px;
+	background-image: url(arrowTop.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .arrowBottom {
+	height: 20px;
+	width: 60px;
+	background-image: url(arrowBottom.png);
+	background-repeat: no-repeat;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .left {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(left.png);
+	background-repeat: repeat-y;
+	background-position: top;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .right {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(right.png);
+	background-repeat: repeat-y;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .top {
+	background-image: url(top.png);
+	background-repeat: repeat-x;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .bottom {
+	background-image: url(bottom.png);
+	background-repeat: repeat-x;
+	tmp:expression(setPng24(this));
+}
+#battleButton_tooltip .arrowSet {
+	font-size: 3px;
+}
+#battleButton_tooltip .arrowSetBottom {
+	font-size: 3px;
+}
+
+/***********일반툴팁*************/
+.tooltip_main1, .tooltip_main2, .tooltip_main3, .tooltip_main4, .tooltip_main5 {
+	margin:-13px 0 0 10px;
+}
+.tooltip_end{
+	margin:0;
+}
+#tooltip {
+	position: absolute;
+	z-index: 10;
+	font-size: 3px;
+	display:none;
+}
+#tooltip .tip {
+	vertical-align: top;
+	background-color: #FFFFFF;
+}
+#tooltip .content {
+	padding: 4px;
+	font-size: 12px;
+	cursor:default;
+	line-height:1.3em;
+}
+#tooltip .leftTop {
+	font-size: 3px;
+	height: 20px;
+	width: 20px;
+	background-image: url(leftTop.png);
+	background-repeat: no-repeat;
+}
+#tooltip .rightTop {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(rightTop.png);
+	background-repeat: no-repeat;
+}
+#tooltip .leftBottom {
+	font-size: 3px;
+	height: 20px;
+	width: 20px;
+	background-image: url(leftBottom.png);
+	background-repeat: no-repeat;
+}
+#tooltip .rightBottom {
+	font-size: 3px;
+	background-image: url(rightBottom.png);
+	background-repeat: no-repeat;
+}
+#tooltip .arrow {
+	height: 20px;
+	width: 60px;
+	background-image: url(arrowTop.png);
+	background-repeat: no-repeat;
+}
+#tooltip .arrowBottom {
+	height: 20px;
+	width: 60px;
+	background-image: url(arrowBottom.png);
+	background-repeat: no-repeat;
+}
+#tooltip .left {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(left.png);
+	background-repeat: repeat-y;
+	background-position: top;
+}
+#tooltip .right {
+	font-size: 3px;
+	width: 20px;
+	background-image: url(right.png);
+	background-repeat: repeat-y;
+}
+#tooltip .top {
+	background-image: url(top.png);
+	background-repeat: repeat-x;
+}
+#tooltip .bottom {
+	background-image: url(bottom.png);
+	background-repeat: repeat-x;
+}
+#tooltip .arrowSet {
+	font-size: 3px;
+}
+#tooltip .arrowSetBottom {
+	font-size: 3px;
+}

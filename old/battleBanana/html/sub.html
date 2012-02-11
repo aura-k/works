@@ -1,0 +1,553 @@
+<?
+	include "../php/subAction.php";
+	include "inc_header.html";
+	if($_GET['options'] != "test"){
+		include "../teaser.html";
+		//echo "<br><br><center>현재 홈페이지 긴급 점검 중 입니다. 빠른시일내에 복구 완료하도록 하겠습니다. 이용에 불편을 드려 대단히 죄송합니다.<br>문의사항은 monkey@battlebanana.com 로 메일 주시면 감사하겠습니다.</center>";
+		return;
+	}
+	include "inc_header_sub.html";
+	include "inc_quickMenu.html";
+	include "../php/define_battle.php";
+
+?>
+        <!-- grey부분 시작-->
+		<div id="sub_gray">
+        <table width="1024" height="365" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td>
+            <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr>
+                <td class="title_sub"><?=$row['item_fname']?></td>
+              </tr>
+            </table>
+            <table width="1000" border="0" cellspacing="0" cellpadding="0" align="center" style="margin-top:6px;">
+              <tr>
+                <!--히스토리 시작-->
+                <td width="280">
+                <table width="280" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="../img/sub/img_his.gif" border="0"></td>
+                  </tr>
+                </table>
+                <table width="280" border="0" cellspacing="1" cellpadding="0" bgcolor="#2d2d2d" class="his_w">
+                  <tr>
+                    <td height="20" bgcolor="#3d3d3d">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time_y.gif" align="absbottom"/></td>
+                            <td width="100" class="his_y"><span class="sub_bid_time0">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img0"><img src="../img/sub/ico_peo_y.gif" align="absbottom"/></span></td>
+                            <td><span class="his_y"><span class="sub_bid_id0">-</span> <span class="his_g">(<span class="sub_bid_ip0">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+                  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time1">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img1"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id1">-</span></span> <span class="his_g">(<span class="sub_bid_ip1">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time2">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img2"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id2">-</span></span> <span class="his_g">(<span class="sub_bid_ip2">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time3">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img3"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id3">-</span></span> <span class="his_g">(<span class="sub_bid_ip3">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time4">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img4"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id4">-</span></span> <span class="his_g">(<span class="sub_bid_ip4">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time5">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img5"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id5">-</span></span> <span class="his_g">(<span class="sub_bid_ip5">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time6">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img6"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id6">-</span></span> <span class="his_g">(<span class="sub_bid_ip6">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time7">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img7"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id7">-</span></span> <span class="his_g">(<span class="sub_bid_ip7">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time8">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img8"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id8">-</span></span> <span class="his_g">(<span class="sub_bid_ip8">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time9">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img9"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id9">-</span></span> <span class="his_g">(<span class="sub_bid_ip9">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time10">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img10"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id10">-</span></span> <span class="his_g">(<span class="sub_bid_ip10">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+				  <tr>
+                    <td height="20" background="../img/sub/bg_his.gif">
+                    	<table width="270" border="0" cellpadding="0" cellspacing="0" align="center">
+                          <tr>
+                            <td width="19"><img src="../img/sub/ico_time.gif" align="absbottom"/></td>
+                            <td width="100"><span class="sub_bid_time11">--.-- --:--:--.--</span></td>
+                            <td width="20"><span class="sub_bid_img11"><img src="../img/sub/ico_peo.gif" align="absbottom"/></span></td>
+                            <td><span><span class="sub_bid_id11">-</span></span> <span class="his_g">(<span class="sub_bid_ip11">-</span>)</span></td>
+                          </tr>
+                        </table>                    </td>
+                  </tr>
+                </table>                </td>
+                <!--히스토리 끝-->
+                <td width="45"></td><!--마진-->
+                <!--상품사진 시작-->
+                <td width="352">
+                    <table width="352" height="298" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td background="../img/sub/bg_pro.gif"  style="padding-top:6px;">
+                    <table width="250" height="250" border="0" cellpadding="0" cellspacing="0" align="center">
+                              <tr>
+                                <td valign="top"><? for($i=1;$i<=$photo_cnt;$i++){?><div id="sub_mainphoto_<?=$i?>" style="position:absolute;display:none;"><img src="../<?=$sub_photo[$i]?>" width="250" height="250"/></div><?}?></td>
+                              </tr>
+                            </table>
+                            <table width="335" height="38" border="0" cellpadding="0" cellspacing="0" align="center">
+                              <tr>
+                                <td width="140"></td>
+                              <td width="60">
+                                	<table border="0" cellpadding="0" cellspacing="0" align="center">
+                                      <tr>
+										<? for($i=1;$i<=$photo_cnt;$i++){?>
+                                        <td width="10"><div class="sub_photo_num_<?=$i?>"><a href="#" onmousedown="subChangePhoto(<?=$i?>)" style='cursor:pointer'><img src="../img/sub/btn_thumb.gif" name="btn_thumb<?=$i?>" id="btn_thumb<?=$i?>" onmouseover="javascript:btn_thumb<?=$i?>.src='../img/sub/btn_thumb_o.gif';" onmouseout="javascript:btn_thumb<?=$i?>.src='../img/sub/btn_thumb.gif';" border="0"/></a></div></td>
+										<?}?>
+                                      </tr>
+                                    </table>
+                                </td>
+                                <td width="135" align="right">
+                                	<table width="80" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td width="26"><a onclick='makeFavorite()' style='cursor:pointer'><img src="../img/sub/btn_bookmark.gif" name="btn_bookmark" id="btn_bookmark" onmouseover="javascript:btn_bookmark.src='../img/sub/btn_bookmark_o.gif';" onmouseout="javascript:btn_bookmark.src='../img/sub/btn_bookmark.gif';" border="0" alt="관심경매추가" title="관심경매추가"/></a></td>
+                                        <td width="26"><a href='#dialog_email' name='modal'><img src="../img/sub/btn_mail.gif" name="btn_mail" id="btn_mail" onmouseover="javascript:btn_mail.src='../img/sub/btn_mail_o.gif';" onmouseout="javascript:btn_mail.src='../img/sub/btn_mail.gif';" border="0" alt="메일로 공유하기" title="메일로 공유하기"/></a></td>
+                                        <td width="26"><a onclick='sendMyTwit()' style='cursor:pointer'><img src="../img/sub/btn_twit.gif" name="btn_twit" id="btn_twit" onmouseover="javascript:btn_twit.src='../img/sub/btn_twit_o.gif';" onmouseout="javascript:btn_twit.src='../img/sub/btn_twit.gif';" border="0" alt="트위터로 공유하기" title="트위터로 공유하기"/></a></td>
+                                        <td width="2"></td>
+                                      </tr>
+                                    </table>
+                                </td>
+                              </tr>
+                            </table>
+                        </td>
+                      </tr>
+                    </table>                
+                </td>
+                <!--상품사진 끝-->
+                <td width="45"></td><!--마진-->
+						
+                <!--경매 시작-->
+                <td width="278" valign="top">
+				<!-- 보상구매 레이어 시작-->
+				<div id="rewardlayer" style="position:absolute;background:url('../img/sub/bg_reward.gif');width:278px;height:124px;display:none">
+				<table width="278" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                        <table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_price.gif" align="absmiddle"></td>
+                              <td align="right">
+                              	<table width="209" height="39" border="0" background="../img/sub/bg_price.gif">
+                                  <tr>
+                                    <td class="price" style="padding-right:6px;"><img src="../img/sub/img_won.gif"/>&nbsp;<span class="sub_item_price_rrp"><?=number_format($row['item_rrp'])?></span></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	<table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_re_banana.gif" align="absmiddle"></td>
+                              <td align="right">
+                              	<table width="209" height="39" border="0" background="../img/sub/bg_price.gif">
+                                  <tr>
+                                    <td class="now_price" style="padding-right:6px;"><img src="../img/sub/img_won_y.gif"/>&nbsp;<span class="sub_item_price_bided"><?=number_format($row3['cnt']*BANANA_PRICE)?></span></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	<table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_refund_price.gif" align="absmiddle"></td>
+                              <td align="right">
+                              	<table width="209" height="39" border="0" background="../img/sub/bg_price.gif">
+                                  <tr>
+                                    <td class="reward_price" style="padding-right:6px;"><img src="../img/sub/img_won_g.gif"/>&nbsp;<span class="sub_item_price_reward"><?=number_format($row['item_rrp']-($row3['cnt']*BANANA_PRICE))?></span></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                </table>
+				</div>
+				<!-- 보상구매 레이어 끝-->
+				<?	
+							$now = mktime();
+							$item_gaptime = $row['item_expired']-$now;
+							if($item_gaptime >= -3){
+								$item_hour = floor($item_gaptime/3600);
+								$item_min = floor($item_gaptime%3600/60);
+								$item_sec = $item_gaptime%3600%60;
+							}else{
+								$item_hour = 0;
+								$item_min = 0;
+								$item_sec = 0;
+								$battleButton = "<img src=\"../img/sub/btn_end.gif\" border=\"0\" onmouseover=\"$('.tooltip_end').show();\" onmouseout=\"$('.tooltip_end').hide();\">";
+							}
+
+							if($item_hour < 10) $item_hour = "0".$item_hour;
+							if($item_min < 10) $item_min = "0".$item_min;
+							if($item_sec < 10) $item_sec = "0".$item_sec;
+							$exp_date = date('Y년 m월 d일 H시 i분 s초',$row['item_expired']);
+				?>
+				<div id='tooltip' class='tooltip_end'  onmouseover="$('.tooltip_end').show();" onmouseout="$('.tooltip_end').hide();" ><table border='0' cellspacing='0' cellpadding='0'><tr><td class='leftTop'></td><td><table class='arrowSet' border='0' cellspacing='0' cellpadding='0' style=' '><tr><td class='top' style='width:249px; height: 20px;'></td></tr></table></td><td class='rightTop'> </td></tr><tr><td class='left'></td><td class='tip' style='height: 0px; '><div class='content'>
+						<table width="240px" cellpadding="0" cellspacing="0" border="0">
+						<tr>
+						<td width="62"><img src="../img/sub/ico_end1.jpg" /></td>
+						<td width="200" title="<?=$win_comment?>"><?=mb_strimwidth($win_comment, 0, 100, "...", "UTF-8")?></td>
+						</tr>
+						<tr>
+						<td><img src="../img/sub/ico_end2.jpg" /></td>
+						<td><?=$exp_date?></td>
+						</tr>
+						<tr>
+						<td><img src="../img/sub/ico_end3.jpg" /></td>
+						<td>바나나100%보상구매 가능 상품은 24시간 이내에 신청해주세요.</td>
+						</tr>
+						</table>
+						
+						</div></td><td class='right'></td></tr><tr><td class='leftBottom'></td><td><table class='arrowSet' border='0' cellspacing='0' cellpadding='0'><tr><td class='arrowBottom'></td><td class='bottom' style='width:189px; height: 20px; '></td></tr></table></td><td class='rightBottom'></td></tr></table></div>
+                <table width="278" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>
+                        <table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_now_win.gif" align="absmiddle"></td>
+                              <td align="right" class="now_win"><img src="../img/sub/ico_crown.gif" align="absmiddle">&nbsp;<span class="sub_item_bider">-</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	<table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_price.gif" align="absmiddle"></td>
+                              <td align="right">
+                              	<table width="209" height="39" border="0" background="../img/sub/bg_price.gif">
+                                  <tr>
+                                    <td class="price" style="padding-right:6px;"><img src="../img/sub/img_won.gif"/>&nbsp;<?=number_format($row['item_rrp'])?></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	<table width="278" height="43" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td><img src="../img/sub/img_now_price.gif" align="absmiddle"></td>
+                              <td align="right">
+                              	<table width="209" height="39" border="0" background="../img/sub/bg_price.gif">
+                                  <tr>
+                                    <td class="now_price" style="padding-right:6px;" valign="top"><span><img src="../img/sub/img_won_y.gif"/>&nbsp;</span><span class="sub_item_price" id="sub_item_price"><?=number_format($row['item_price'])?></span></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="67" background="../img/sub/bg_time.gif">
+						
+                        <table width="240" border="0" cellpadding="0" cellspacing="0" align="center" class="time">
+                          <tr>
+                            <td><span class="sub_item_expired_h" id="sub_item_expired_h"><?=$item_hour?></span></td>
+                            <td align="center"><span class="sub_item_expired_m" id="sub_item_expired_m"><?=$item_min?></span></td>
+                            <td align="right"><span class="sub_item_expired_s" id="sub_item_expired_s"><?=$item_sec?></span></td>
+                          </tr>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="63"><span id="battleButton"><?=$battleButton?></span></td>
+                  </tr>
+				  
+                  <tr>
+                    <td>
+					<?//24시간이 지나면 보상경매를 없애야한다.
+						if($row['is_reward'] == "yes"){
+							if(mktime()-$row['item_expired'] >= 24*60*60)
+								echo "<div id='deli'><img src='../img/sub/btn_reward.gif' border='0' onclick='alert(\"경매 종료 후 24시간이 지난 상품은 보상구매를 하실 수 없습니다.\")' style='cursor:pointer'/></div>";
+							else
+								echo "<div id='deli'><div id='reward'>".$rewardButton."</div></div>";
+						}else
+							echo "<div id='deli'><img src='../img/sub/btn_reward_x.gif' border='0'></div>";
+					?>
+					</td>
+                  </tr>
+                </table></td>
+                <!--경매 끝-->
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </table>
+		</div>
+        <!-- grey부분 끝-->
+    </td>
+  </tr>
+</table>
+
+<div id="main_table" style="margin:0 auto; width:1000px;padding:10px 0 0 10px; text-align:center;">
+<!--최근상품 시작 -->
+<div id="sub_table" style="margin:0 auto; width:1000px; height:165px; padding:5px 0 0 20px;">
+<img src="../img/ajax_loader_retangle.gif" align="center" style="margin-top:55px"/>
+</div>
+<!--최근상품 끝 -->
+<!--상품소개 시작 -->
+<table width="1024" height="100" border="0" cellspacing="0" cellpadding="0" style="margin-top:18px;" align="center"><tr><td><table width="1024" height="100" border="0" cellspacing="0" cellpadding="0" style="margin-top:18px;" align="center">
+  <tr>
+    <td><table width="1024" height="27" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="4"><img src="../img/sub/bg_top_l.gif"/></td>
+        <td width="1016" height="27" background="../img/sub/bg_top.gif" style="padding-left:10px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cate">
+              <tr>
+				<?
+					$category_id = substr($row['item_id'],0,1);
+					if($category_id == 1) $category_name = "디지털기기";
+					else if($category_id == 2) $category_name = "컴퓨터";
+					else if($category_id == 3) $category_name = "패션/뷰티";
+					else if($category_id == 4) $category_name = "라이프";
+				?>
+                <td width="25"><a href="./main.html"><img src="../img/sub/btn_home.gif" name="btn_home" id="btn_home" onmouseover="javascript:btn_home.src='../img/sub/btn_home_o.gif';" onmouseout="javascript:btn_home.src='../img/sub/btn_home.gif';" border="0"/></a></td>
+                <td width="30" align="center"><img src="../img/sub/img_part.gif"/></td>
+                <td width="60" align="center"><a><?=$category_name?></a></td>
+                <td width="30" align="center"><img src="../img/sub/img_part.gif"/></td>
+                <td width="500" align="left"><a><?=$row['item_fname']?></a></td>
+				<td align="right"><a>No.<?=$row['item_id']?></a>&nbsp;&nbsp;</td>
+              </tr>
+            </table>
+			
+        </td>
+        <td width="4"><img src="../img/sub/bg_top_r.gif"/></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="1024" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="3" background=../img/sub/bg_l.gif></td>
+        <td height="27" style="padding:30px 100px 30px 100px;text-align:left">
+		<?=$row['item_text']?></td>
+        <td width="3"background=../img/sub/bg_r.gif></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><table width="1024" height="4" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="4"><img src="../img/sub/bg_bottom_l.gif"/></td>
+        <td width="1016" height="4" background="../img/sub/bg_bottom.gif"></td>
+        <td width="4"><img src="../img/sub/bg_bottom_r.gif"/></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>  <table width="1024" height="4" border="0" cellspacing="0" cellpadding="0"><tr></tr>
+</table>
+    </td>  
+  </tr>
+</table>
+<!--상품소개 끝 -->
+</div>
+
+<!--bottom 시작-->
+<table width="600" border="0" cellspacing="0" cellpadding="0" style="margin-top:50px; text-align:center" class="copyright" align="center">
+  <tr>
+    <td align="left">
+    	<table width="590" height="50" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+          <td valign="bottom"><iframe src="https://www.facebook.com/plugins/like.php?href=http://www.facebook.com/pages/baeteulbanana/154728831213959&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:35px;" allowTransparency="true"></iframe></td>
+		  <td width="45" align="center"><a href="http://twitter.com/battlebanana" target="_blank"><img src="../img/ico_twit.gif" name="ico_twit" id="ico_twit" onmouseover="javascript:ico_twit.src='../img/ico_twit_o.gif';" onmouseout="javascript:ico_twit.src='../img/ico_twit.gif';" border="0" alt="배틀바나나 트위터" title="배틀바나나 트위터"/></a></td>
+            <td width="45" align="center"><a href="http://www.wwf.org/" target="_blank"><img src="../img/ico_wwf.gif" name="ico_wwf" id="ico_wwf" onmouseover="javascript:ico_wwf.src='../img/ico_wwf_o.gif';" onmouseout="javascript:ico_wwf.src='../img/ico_wwf.gif';" border="0" alt="수익금의 2%를 세계자연보호기금에 기부합니다." title="수익금의 2%를 세계자연보호기금에 기부합니다."/></a></td>
+            <td width="45" align="center"><a href="http://www.youtube.com/user/VideoBATTLEBANANA" target="_blank"><img src="../img/ico_youtube.gif" name="ico_youtube" id="ico_youtube" onmouseover="javascript:ico_youtube.src='../img/ico_youtube_o.gif';" onmouseout="javascript:ico_youtube.src='../img/ico_youtube.gif';" border="0" alt="배틀바나나 채널" title="배틀바나나 채널"/></a></td>           
+            <td width="45" align="center"><img src="../img/ico_pay.gif" name="ico_pay" id="ico_pay" onmouseover="javascript:ico_pay.src='../img/ico_pay_o.gif';" onmouseout="javascript:ico_pay.src='../img/ico_pay.gif';" border="0" alt="이니시스 결제시스템" title="이니시스 결제시스템" style="cursor:pointer" Onclick=javascript:window.open("https://mark.inicis.com/mark/popup_v1.php?no=11713&amp;st=1278699275","mark","scrollbars=no,resizable=no,width=530,height=670");></td>
+            <td>
+            <!-- <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td colspan="5"><img src="../img/img_browser.gif"/></td>
+                </tr>
+                <tr>
+                    <td width="35"><a href="http://www.microsoft.com/korea/ie8/" target="_blank"><img src="../img/ico_ie.jpg" name="ico_ie" id="ico_ie" onmouseover="javascript:ico_ie.src='../img/ico_ie_o.jpg';" onmouseout="javascript:ico_ie.src='../img/ico_ie.jpg';" border="0" alt="인터넷 익스플로러 8 다운로드" title="인터넷 익스플로러 8 다운로드"/></a></td>
+                    <td width="35"><a href="http://www.google.com/chrome/" target="_blank"><img src="../img/ico_ch.jpg" name="ico_ch" id="ico_ch" onmouseover="javascript:ico_ch.src='../img/ico_ch_o.jpg';" onmouseout="javascript:ico_ch.src='../img/ico_ch.jpg';" border="0" alt="크롬 다운로드" title="크롬 다운로드"/></a></td>
+                    <td width="35"><a href="http://www.apple.com/kr/safari/" target="_blank"><img src="../img/ico_sf.jpg" name="ico_sf" id="ico_sf" onmouseover="javascript:ico_sf.src='../img/ico_sf_o.jpg';" onmouseout="javascript:ico_sf.src='../img/ico_sf.jpg';" border="0" alt="사파리 5 다운로드" title="사파리 5 다운로드"/></a></td>
+                    <td width="35"><a href="http://www.mozilla.or.kr/ko/" target="_blank"><img src="../img/ico_ff.jpg" name="ico_ff" id="ico_ff" onmouseover="javascript:ico_ff.src='../img/ico_ff_o.jpg';" onmouseout="javascript:ico_ff.src='../img/ico_ff.jpg';" border="0" alt="파이어폭스 3.6 다운로드" title="파이어폭스 3.6 다운로드"/></a></td>
+                    <td width="35"><a href="http://www.opera.com/" target="_blank"><img src="../img/ico_op.jpg" name="ico_op" id="ico_op" onmouseover="javascript:ico_op.src='../img/ico_op_o.jpg';" onmouseout="javascript:ico_op.src='../img/ico_op.jpg';" border="0" alt="오페라 10.60 다운로드" title="오페라 10.60 다운로드"/></a></td>
+                </tr>
+            </table> -->
+            </td>
+          </tr>
+    </table></td>
+  </tr>
+    <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td height="1" bgcolor="#cecece"></td>
+  </tr>
+    <tr>
+    <td height="2" bgcolor="#ffffff"></td>
+  </tr>
+  <tr>
+    <td height="30">ⓒ 2010 몽키브라더스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="openHelp('help_service.html')" style='cursor:pointer' target="_blank">이용약관</a> | <a onclick="openHelp('help_privacy.html')" style='cursor:pointer' target="_blank">개인정보보호정책</a></td>
+  </tr>
+  <tr>
+    <td height="1" bgcolor="#cecece"></td>
+  </tr>
+  <tr>
+    <td height="20"></td>
+  </tr>
+  <tr>
+    <td height="20">대표 : 김윤성 | 주소 : 서울시 도봉구 쌍문2동 현대하이츠 402</td>
+  </tr>
+  <tr>
+    <td height="20">이메일 : monkey@battlebanana.com | 연락처 : 070-7951-7050</td>
+  </tr>
+  <tr>
+    <td height="20">사업자등록번호 : 210-18-85498 | 통신판매업신고번호 : 2010-서울도봉-059</td>
+  </tr>
+</table>
+<table width="100%" height="47" border="0" cellspacing="0" cellpadding="0" background="../img/bg_bottom.gif">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<div id="boxes">
+<div id="dialog" class="window" style="position:fixed;z-index:9999">
+<img src="../img/ajax_loader.gif"/>
+</div>
+</div>
+<div id="boxesIE">
+<div id="dialogIE" class="windowIE" style="position:fixed">
+<img src="../img/ajax_loader_retangle.gif" align="center"/>
+</div>
+</div>
+<div id="mask"></div>
+<div id="maskIE"></div>
+<!-- <div id="battleButton_tooltip"></div>  -->
+<input type="hidden" id="sid_layer" value="<?=$row['item_id']?>"/>
+<input type="hidden" id="is_end_layer" value="<?=$item_gaptime?>"/>
+<input type="hidden" id="uid_layer" value="<?=$_SESSION['ID']?>"/>
+<input type="hidden" id="sna_layer" value="<?=$row['item_fname']?>! 현재 <?=number_format($row['item_price'])?>원!"/>
+<input type="hidden" id="is_order_layer" value="<?=$is_order?>"/>
+<!-- bottom 끝 -->
+<script>
+window.onload=function(){
+	onLayerLoad();
+	subItemList('<?=$row['item_id']?>');
+	setTimeout("pageRefresh()", 1200000);
+}
+	TrustLogo("../img/cornertrust.gif", "SC2", "none");
+	//구글 로그
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-18495856-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//구글로그
+</script>
+</body>
+</html>
+<?
+	mysql_close($connect);
+?>

@@ -1,0 +1,134 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body, table {font-size: 12px; font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+-->
+</style>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<script type='text/javascript' src='./js/script.js'></script>
+<script>
+function deleteAction(uid){
+	if(confirm("정말로 해당ID를 삭제 하시겠습니까?\n\n유저ID : "+uid+"\n\n삭제하시면 영구적으로 복구할 수 없습니다!")){
+		$.post("./php/deleteUserAction.php",{"uid":uid},function(data){
+			if(data == "true"){
+				alert("정상적으로 삭제 되었습니다.");
+				location.reload();
+			}else
+				alert("디비저장에러!");
+		});
+	}
+}
+</script>
+</head>
+
+<body>
+<? include "inc.html";?>
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">탈퇴회원리스트 | |<select name="search" id="search" style="width:150px">
+                        								<option value="00">전체</option>
+                                                        <option value="01">회원번호</option>
+                                                        <option value="02">아이디</option>
+                                                        <option value="03">이름</option>
+                                                        <option value="04">주민번호</option>
+                                                         <option value="05">이메일</option>
+                                                      </select>
+              <input name="" type="text" />
+              <a href="#">검색</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="1" cellpadding="7" bgcolor="#333333" style="margin-bottom:20px;">
+          <tr bgcolor="#FFFFFF">
+            <td width="7%" height="30px;"><b><a href="#">회원번호</a></b></td>
+            <td width="10%" class="c"><b><a href="#">아이디</a></b></td>
+            <td width="7%" class="c"><b><a href="#">이름</a></b></td>
+            <td width="8%" class="c"><b><a href="#">주민번호</a></b></td>
+            <td width="15%" class="c"><b><a href="#">이메일</a></b></td>
+            <td width="8%" class="c"><b><a href="#">로그인수</a></b></td>
+            <td width="10%" class="c"><b><a href="#">보유바나나</a></b></td>
+            <td width="10%" class="c"><b><a href="#">사용바나나</a></b></td>
+            <td width="10%" class="c"><b><a href="#">가입일</a></b></td>
+            <td width="10%" class="c"><b><a href="#">탈퇴일</a></b></td>
+			<td width="5%" class="c"><b>삭제</b></td>
+          </tr>
+		   <?
+		  include "../php/connect.php";
+		  
+		  function pagecount($id){
+			$sql=mysql_query("select COUNT(no) as cnt from BBanana_drops") or die(mysql_error());
+			$row=mysql_fetch_array($sql);
+		    
+			return $row['cnt'];
+		  }
+		  
+		  if($_GET['p'] == null) $_GET['p'] = 1;
+
+		  $sql=mysql_query("select * from BBanana_drops order by no DESC limit ".(($_GET['p']-1)*20).", 20") or die(mysql_error()); 			
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+			$str2 = "SELECT COUNT( no ) AS cnt
+			FROM  `BBanana_bananas` 
+			WHERE user_id =  '".$row['user_id']."'
+			AND  `item_id` NOT LIKE  'charge%'";
+			$sql2=mysql_query($str2);
+			$row2=mysql_fetch_array($sql2);
+
+			if(mktime()-$row['deleted'] > 2592000)
+				$bgcolor = "#FF0033";
+			else
+				$bgcolor = "#FFFFFF";
+
+			echo"<tr bgcolor='".$bgcolor."'>
+            <td class='c'>".$row['no']."</td>
+            <td class='c'>".$row['user_id']."</td>
+            <td class='c'>".$row['user_name']."</td>
+            <td class='c'>".$row['regi_number']."</td>
+            <td class='c'>".$row['email']."</td>
+            <td class='c'>".$row['cnt']."</td>
+            <td class='r'><a href='#'>".$row['banana']."</a></td>
+            <td class='r'><a href='#'>".$row2['cnt']."</a></td>
+			<td class='c'>".$row['created']."</td>
+            <td class='c'>".date('Y-m-d h:i:s',$row['deleted'])."</td>
+			<td class='c'><a onclick='deleteAction(\"".$row['user_id']."\")' style='cursor:pointer'>삭제</a></td>
+          </tr>";
+
+			$i++;
+			++$cnt;
+			}
+			
+			 $page_cnt = pagecount($_GET['sid']);
+			 $page_cnt = intval($page_cnt/20);
+		  ?>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">
+			<?
+			for($i=0;$i<=$page_cnt;$i++)
+				echo "<a href=\"05_manage_deleted_user.html?p=".($i+1)."\">".($i+1)."</a>&nbsp;";
+			mysql_close($connect);
+			?>
+			</td>
+          </tr>
+        </table>
+</td>
+      </tr>
+    </table>
+</body>
+</html>

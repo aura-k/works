@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>IBK</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="script_an.js"></script>
+	<link href="style_an.css" rel="stylesheet" type="text/css"/> 
+	<script type="text/javascript">
+		function goMenu(name){
+			switch(name){
+				case 'main':{
+					//$.get('log.aspx?p=main',function(data){
+						goMain();
+					//});
+				}break;
+
+				case 'cf':{
+					//$.get('log.aspx?p=cf',function(data){
+						goCf();
+					//});
+				}break;
+
+				case 'cf_1':{
+					//$.get('log.aspx?p=cf_1',function(data){
+						location.href = "http://brightcove.vo.llnwd.net/d9/unsecured/media/88960803001/88960803001_609556699001_IBK----------20--9-15-.mp4?pub-id=88960803001";
+					//});
+				}break;
+
+				case 'cf_2':{
+					//$.get('log.aspx?p=cf_2',function(data){
+						location.href = "http://brightcove.vo.llnwd.net/d9/unsecured/media/88960803001/88960803001_609556917001_IBK-------------20--9-15-.mp4?pub-id=88960803001";
+					//});
+				}break;
+
+				case 'info':{
+					//$.get('log.aspx?p=info',function(data){
+						goInfo();
+					//});
+				}break;
+
+				case 'info_1':{
+					//$.get('log.aspx?p=info_1',function(data){
+						location.href = "insert_info1.html";
+					//});
+				}break;
+
+				case 'info_2':{
+					//$.get('log.aspx?p=info_2',function(data){
+						location.href = "insert_info2.html";
+					//});
+				}break;
+
+				case 'logic':{
+					//$.get('log.aspx?p=logic',function(data){
+						goLogic();
+					//});
+				}break;
+
+				case 'input':{
+					//$.get('log.aspx?p=input',function(data){
+						goInput();
+					//});
+				}break;
+
+				case 'ani':{
+					//$.get('log.aspx?p=ani',function(data){
+						goAni();
+					//});
+				}break;
+
+				case 'ani_1':{
+					//$.get('log.aspx?p=ani_1',function(data){
+						location.href = "insert_toon1.html";
+					//});
+				}break;
+
+				case 'ani_2':{
+					//$.get('log.aspx?p=ani_2',function(data){
+						location.href = "insert_toon2.html";
+					//});
+				}break;
+
+				case 'ani_3':{
+					//$.get('log.aspx?p=ani_3',function(data){
+						location.href = "insert_toon3.html";
+					//});
+				}break;
+
+				case 'ani_4':{
+					//$.get('log.aspx?p=ani_4',function(data){
+						location.href = "insert_toon4.html";
+					//});
+				}break;
+
+				case 'ani_5':{
+					//$.get('log.aspx?p=ani_5',function(data){
+						location.href = "insert_toon5.html";
+					//});
+				}break;
+
+				case 'twit':{
+					//$.get('log.aspx?p=twit',function(data){
+						//$.get('readTwit.aspx?id='+setID,function(data){
+							window.open("http://twitter.com/home?status=아직도 ATM기에서 수수료 내고 뽑나요? ibk는 수수료가 무료! 지금 바로 ibk모바일홈페이지에서 확인하세요:) http://tagtv.co.kr/ibk");
+						//});
+					//});
+				}break;
+				
+				case 'twit_phone':{
+					//$.get('log.aspx?p=twit_phone',function(data){
+						//$.get('readTwit.aspx?id='+setID,function(data){
+							location.href = "http://twitter.com/home?status=핸드폰 요금 자동 이체하면, 전국 모든 은행 ATM수수료가 무료! http://t.co/kh0Ot14";
+						//});
+					//});
+				}break;
+
+				case 'twit_pay':{
+					//$.get('log.aspx?p=twit_pay',function(data){
+						//$.get('readTwit.aspx?id='+setID,function(data){
+							location.href = "http://twitter.com/home?status=월급 자동 이체만 해도, 전국 모든 은행 ATM 수수료가 무료! http://t.co/1TNwes4";
+						//});
+					//});
+				}break;
+			}
+		}
+		function openPop(name){
+			if(name == 'logic'){
+				$('.popup').fadeIn(500);
+			}else if(name == 'result1'){
+				$.get("check_gift.aspx", function(data){
+					if(data < 100) $('.popup_event1').fadeIn(500);
+					else $('.popup_event1_1').fadeIn(500);
+				});
+			}else if(name == 'result2'){
+				$.get("check_gift.aspx", function(data){
+					if(data < 100) $('.popup_event2').fadeIn(500);
+					else $('.popup_event2_1').fadeIn(500);
+				});
+			}else if(name == 'result3'){
+				$.get("check_gift.aspx", function(data){
+					if(data < 100) $('.popup_event3').fadeIn(500);
+					else $('.popup_event3_1').fadeIn(500);
+				});
+			}else if(name == 'result4'){
+				$.get("check_gift.aspx", function(data){
+					if(data < 100) $('.popup_event4').fadeIn(500);
+					else $('.popup_event4_1').fadeIn(500);
+				});
+			}
+		}
+		function closePop(name){
+			if(name == 'logic'){
+				$('.popup').hide();
+			}else if(name == 'result1'){
+				$('.popup_event1').hide();
+			}else if(name == 'result2'){
+				$('.popup_event2').hide();
+			}else if(name == 'result3'){
+				$('.popup_event3').hide();
+			}else if(name == 'result4'){
+				$('.popup_event4').hide();
+			}else if(name == 'result1_1'){
+				$('.popup_event1_1').hide();
+			}else if(name == 'result2_1'){
+				$('.popup_event2_1').hide();
+			}else if(name == 'result3_1'){
+				$('.popup_event3_1').hide();
+			}else if(name == 'result4_1'){
+				$('.popup_event4_1').hide();
+			}else if(name == 'result_input1'){
+				$('.popup_event_input1').hide();
+			}else if(name == 'result_input2'){
+				$('.popup_event_input2').hide();
+			}
+		}
+		function checkForm(){
+			var name = document.getElementById('name').value;
+			var phone1 = document.getElementById('phone1').value;
+			var phone2 = document.getElementById('phone2').value;
+			var phone3 = document.getElementById('phone3').value;
+			var form = document.getElementById('form');
+
+			if(name== ''){
+				alert('이름을 입력해주세요.');
+				return;
+			}else if(phone1 == '' || phone2== '' || phone3== '' || phone1.length != 3 || phone2.length < 3 || phone3.length < 4){
+				alert('정확한 핸드폰번호를 입력해주세요.');
+				return;
+			}else if(confirm('다음의 정보가 맞습니까?\n이름: '+name+'\n핸드폰: '+phone1+'-'+phone2+'-'+phone3)){
+				$.post('gifti.aspx', {"name":name, "phone":phone1+phone2+phone3}, function(data){
+					if(data == 'OK'){
+						alert('기프티콘 전송이 성공적으로 완료되었습니다!\n상품 문자 도착까지는 다소 시간이 걸릴 수 있습니다.');
+						goMain();
+					}else if(data == 'RE'){
+						//alert('이미 사용된 핸드폰번호 입니다!');
+						$('.popup_event_input1').fadeIn(500);
+					}else if(data == 'OVER'){
+						//alert('죄송합니다.\n금일은 마감 되었습니다.\n내일 다시 이용해주세요.');
+						$('.popup_event_input2').fadeIn(500);
+					}else if(data == 'ERR52'){
+						alert('수신자 번호가 올바르지 않습니다.');
+					}else if(data == 'ERR33'){
+						alert('상품 유효기간이 만료 되었습니다.');
+					}else{
+						alert(data);
+					}
+					form.reset();
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="frame">
+		<ul>
+			<li class="hidden0">
+				<div id="main">
+				<img src="bg_main_add.png" usemap="#Map_main" />
+				<map name="Map_main" id="Map_main">
+					<area shape="poly" coords="233,0,320,86,320,0" href="#" onclick="goMenu('twit')"/>
+					<area shape="circle" coords="68,62,59" href="#" onclick="goMenu('logic')"/>
+					<area shape="circle" coords="105,163,46" href="#" onclick="goMenu('info')"/>
+					<area shape="circle" coords="210,100,63" href="#" onclick="goMenu('ani')"/>
+					<area shape="circle" coords="269,187,42" href="#" onclick="goMenu('cf')"/>
+				</map>
+               <!--  <div class="twit"><a href="#" onclick="goMenu('twit')"><img src="btn_05.png"  style=" float:right;" /></a></div>
+					<ul class="lev0">
+						<li></li>
+					</ul>
+                    <ul class="lev2">
+						<li><a href="#" onclick="goMenu('cf')"><img src="btn_01.png" style="padding:0 0 0 32px;"/></a></li>
+					</ul>
+                    <ul class="lev2">
+						<li><a href="#" onclick="goMenu('info')"><img src="btn_02.png" style="padding:0 0 0 32px;"/></a></li>
+					</ul>
+					<ul class="lev2">
+						<li><a href="#" onclick="goMenu('logic')"><img src="btn_03.png" style="padding:0 0 0 32px;"/></a></li>
+					</ul>
+                    <ul class="lev2">
+						<li><a href="#" onclick="goMenu('ani')"><img src="btn_04.png" style="padding:0 0 0 32px;"/></a></li>
+					</ul>-->
+				</div>
+			</li>
+			<li class="hidden1">
+				<div id="cf">
+					<div class="twit"><a href="#" onclick="goMenu('twit')"><img src="btn_05.png" /></a></div>
+					<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+					<div class="content1"><a href="#" onclick="goMenu('cf_1')"><img src="btn_cf_pay.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('cf_2')"><img src="btn_cf_phone.png" /></a></div>
+				</div>
+			</li>
+			<li class="hidden2">
+				<div id="info">
+					<div class="twit"><a href="#" onclick="goMenu('twit')"><img src="btn_05.png" /></a></div>
+					<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+					<div class="content1"><a href="#" onclick="goMenu('info_1')"><img src="btn_phone.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('info_2')"><img src="btn_pay.png" /></a></div>
+				</div>
+			</li>
+			<!-- <li class="hidden2_1">
+				<div id="info_1">
+
+					<div class="content1">
+						<a href="#" onclick="goMenu('info')" style="margin-right:-4px;z-index:9999;"><img src="btn_main_top.png" /></a>
+					</div>
+					<div class="content3">
+						<a href="#" onclick="goMenu('info')" style="margin-right:-4px;"><img src="btn_main.png" /></a>
+						<a href="#" onclick="goMenu('twit_phone')"><img src="btn_retweet.png" /></a>
+					</div>
+				</div>
+			</li>
+			<li class="hidden2_2">
+				<div id="info_2">
+					<div class="content1">
+						<a href="#" onclick="goMenu('info')" style="margin-right:-4px;"><img src="btn_main_top.png" /></a>
+					</div>
+					<div class="content3">
+						<a href="#" onclick="goMenu('info')" style="margin-right:-4px;"><img src="btn_main.png" /></a>
+						<a href="#" onclick="goMenu('twit_pay')"><img src="btn_retweet.png" /></a>
+					</div>
+				</div>
+			</li> -->
+			<li class="hidden3">
+				<div id="ani">
+				<div class="twit"><a href="#" onclick="goMenu('twit')"><img src="btn_05.png" /></a></div>
+					<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+					<div class="content1"><a href="#" onclick="goMenu('ani_1')"><img src="btn_ep1.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('ani_2')"><img src="btn_ep2.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('ani_3')"><img src="btn_ep3.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('ani_4')"><img src="btn_ep4.png" /></a></div>
+					<div class="content2"><a href="#" onclick="goMenu('ani_5')"><img src="btn_ep5.png" /></a></div>
+				</div>
+			</li>
+			<!-- <li class="hidden3_1">
+				<div id="toon"><img src="toon01.jpg" width="320px" /></div>
+				<div id="bottom"><a href="#" onclick="goMenu('ani')"><img src="btn_main_toon.png" width="320px" /></a></div>
+			</li>
+			<li class="hidden3_2">
+				<div id="toon"><img src="toon02.jpg" width="320px" /></div>
+				<div id="bottom"><a href="#" onclick="goMenu('ani')"><img src="btn_main_toon.png" width="320px" /></a></div>
+			</li>
+			<li class="hidden3_3">
+				<div id="toon"><img src="toon03.jpg" width="320px" /></div>
+				<div id="bottom"><a href="#" onclick="goMenu('ani')"><img src="btn_main_toon.png" width="320px" /></a></div>
+			</li>
+			<li class="hidden3_4">
+				<div id="toon"><img src="toon04.jpg" width="320px" /></div>
+				<div id="bottom"><a href="#" onclick="goMenu('ani')"><img src="btn_main_toon.png" width="320px" /></a></div>
+			</li>
+			<li class="hidden3_5">
+				<div id="toon"><img src="toon05.jpg" width="320px" /></div>
+				<div id="bottom"><a href="#" onclick="goMenu('ani')"><img src="btn_main_toon.png" width="320px" /></a></div>
+			</li> -->
+			<li class="hidden4">
+			<div class="popup_event_input1"><img src="pop_re.png" usemap="#Map_input1" />
+				<map name="Map_input1" id="Map_input1">
+					<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result_input1');"/>
+				</map>
+			</div>
+			<div class="popup_event_input2"><img src="pop_next.png" usemap="#Map_input2" />
+				<map name="Map_input2" id="Map_input2">
+					<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result_input2');"/>
+				</map>
+			</div>
+				<div id="input1">
+					<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+					<form id="form">
+					<div class="content">
+						<input type="text" name="name" id="name"><br>
+						<input type="tel" name="phone1" id="phone1" size="4" maxlength="3">
+						<input type="tel" name="phone2" id="phone2" size="5" maxlength="4">
+						<input type="tel" name="phone3" id="phone3" size="5" maxlength="4">	
+					</div>
+					<div class="button"><img src="btn_ok.png" onclick="checkForm()"/></div>
+					</form>
+				</div>
+			</li>
+			<li class="hidden5">
+				<div id="game">
+					<ul>
+						<li alt="lev0. 스타트페이지">
+							<div class="logic_st">
+								<div class="home">
+								<a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 2);"><img src="btn_start.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev1. 나는 스스로 알뜰한 사람이라고 생각한다.">
+							<div class="logic">
+								<div class="home">
+								<a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 3);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(1, 3);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev2. 대형마트 무료시식코너를 그냥 지나쳐 본적이 없다.">
+							<div class="logic2">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_1_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 4);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(1, 4);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev2. 길바닥에 떨어진 동전을 줍고 작은 행복감을 느낀 적이 있다.">
+							<div class="logic2">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_1_2.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(2, 4);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(3, 4);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev3. 할인쿠폰이나 적립카드 사용이 생활화되어 있다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_3_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 5);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(1, 4);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev3. 인터넷 가격비교사이트를 자주 이용한다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_3_2.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(1, 5);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(3, 5);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev3. 신용카드 적립금을 위해 가급적 정해진 카드만 쓴다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_3_3.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(2, 5);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(3, 4);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev3. 갖고 싶은 물건이 있으면 반드시 사고야 만다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_3_4.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(3, 5);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(2, 5);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev4. 나는 평소 내 은행계좌번호를 외우고 다닌다.">
+						<div class="popup"><img src="pop_phone.png" usemap="#Map" />
+<map name="Map" id="Map"><area shape="rect" coords="55,342,301,382" href="#" onclick="closePop('logic');nextLogic(1, 5);"/></map></div>
+							<div class="logic">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_4_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 6);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="openPop('logic')"><!-- <a href="#" onclick="nextLogic(1, 5);"> --><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev4. 쓸데없이 나가는 ATM수수료가 아깝다.">
+							<div class="logic">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_4_2.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 6);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(1, 6);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev4. 남들에게 선심을 잘 쓰는 편이다.">
+							<div class="logic">
+								<div class="home">
+								<a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_4_3.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(1, 6);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(0, 6);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev4. 가끔 충동구매를 할 때가 있다.">
+							<div class="logic">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_4_4.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(1, 6);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(2, 5);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev5. 나는 현재 만으로 40세 이하다.">
+							<div class="logic2">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_5_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(0, 7);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(1, 8);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev5. 나는 현재 만으로 40세 이하다.">
+							<div class="logic2">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_5_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(1, 7);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(3, 8);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="lev6. 나는 매달 정기적인 수입이 있다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_6_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(1, 8);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(0, 8);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+						<li alt="lev6. 나는 매달 정기적인 수입이 있다.">
+							<div class="logic3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="qst"><img src="q_6_1.png" /></div>
+								<div class="ans">
+									<span class="yes"><a href="#" onclick="nextLogic(3, 8);"><img src="btn_yes.png" /></a></span>
+									<span class="no"><a href="#" onclick="nextLogic(2, 8);"><img src="btn_no.png" /></a></span>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						<li alt="res. 포피형">
+							<div class="popup_event1"><img src="pop_event.png" usemap="#Map2" />
+							<map name="Map2" id="Map2">
+								<area shape="rect" coords="66,321,172,363" href="#" onclick="closePop('result1');goMenu('input');"/>
+								<area shape="rect" coords="180,320,286,362" href="#" onclick="closePop('result1');goMenu('main');"/>
+							</map>
+							</div>
+							<div class="popup_event1_1"><img src="pop_next.png" usemap="#Map2_1" />
+							<map name="Map2_1" id="Map2_1">
+								<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result1_1');"/>
+							</map>
+							</div>
+							<div class="result1">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="event"><a href="#" onclick="openPop('result1')"><img src="btn_event.png" /></a></div>
+								<div class="detail"><a href="#" onclick="goMenu('info_1')"><img src="btn_detail.png" /></a></div>
+							</div>
+						</li>
+						<li alt="res. 터틀맘형">
+							<div class="popup_event2"><img src="pop_event.png" usemap="#Map3" />
+							<map name="Map3" id="Map3">
+								<area shape="rect" coords="66,321,172,363" href="#" onclick="closePop('result2');goMenu('input');"/>
+								<area shape="rect" coords="180,320,286,362" href="#" onclick="closePop('result2');goMenu('main');"/>
+							</map>
+							</div>
+							<div class="popup_event2_1"><img src="pop_next.png" usemap="#Map3_1" />
+							<map name="Map3_1" id="Map3_1">
+								<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result2_1');"/>
+							</map>
+							</div>
+							<div class="result2">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="event"><a href="#" onclick="openPop('result2')"><img src="btn_event.png" /></a></div>
+								<div class="detail"><a href="#" onclick="goMenu('info_2')"><img src="btn_detail.png" /></a></div>
+							</div>
+						</li>
+						<li alt="res. 오스카형">
+							<div class="popup_event3"><img src="pop_event.png" usemap="#Map4" />
+							<map name="Map4" id="Map4">
+								<area shape="rect" coords="66,321,172,363" href="#" onclick="closePop('result3');goMenu('input');"/>
+								<area shape="rect" coords="180,320,286,362" href="#" onclick="closePop('result3');goMenu('main');"/>
+							</map>
+							</div>
+							<div class="popup_event3_1"><img src="pop_next.png" usemap="#Map4_1" />
+							<map name="Map4_1" id="Map4_1">
+								<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result3_1');"/>
+							</map>
+							</div>
+							<div class="result3">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="event"><a href="#" onclick="openPop('result3')"><img src="btn_event.png" /></a></div>
+								<div class="detail"><a href="#" onclick="goMenu('info_1')"><img src="btn_detail.png" /></a></div>
+							</div>
+						</li>
+						<li alt="res. 하치형">
+							<div class="popup_event4"><img src="pop_event.png" usemap="#Map5" />
+							<map name="Map5" id="Map5">
+								<area shape="rect" coords="66,321,172,363" href="#" onclick="closePop('result4');goMenu('input');"/>
+								<area shape="rect" coords="180,320,286,362" href="#" onclick="closePop('result4');goMenu('main');"/>
+							</map>
+							</div>
+							<div class="popup_event4_1"><img src="pop_next.png" usemap="#Map5_1" />
+							<map name="Map5_1" id="Map5_1">
+								<area shape="rect" coords="36,265,282,311" href="#" onclick="closePop('result4_1');"/>
+							</map>
+							</div>
+							<div class="result4">
+								<div class="home"><a href="#" onclick="goMenu('main')"><img src="btn_logo.png" /></a></div>
+								<div class="event"><a href="#" onclick="openPop('result4')"><img src="btn_event.png" /></a></div>
+								<div class="detail"><a href="#" onclick="goMenu('info_2')"><img src="btn_detail.png" /></a></div>
+							</div>
+						</li>
+					</ul>
+					<ul>
+						
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

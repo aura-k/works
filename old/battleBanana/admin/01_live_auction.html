@@ -1,0 +1,120 @@
+<? include "../php/checkAdmin.php";?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type='text/javascript' src='../js/jquery-1.4.2.min.js'></script>
+<style type="text/css">
+<!--
+body, table {font-size: 12px;font-family:dotum;}
+.r {text-align:right;}
+.l {text-align:left;}
+.c {text-align:center;}
+-->
+</style>
+<script type='text/javascript' src='./js/script.js'></script>
+</head>
+
+<body>
+<? include "inc.html";?>
+<table width="100%" border="0" align="center">
+      <tr>
+        <td width="169">
+        
+        </td>
+        <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:20px;">
+          <tr>
+            <td align="center">진행중경매 | <select name="search" id="search" style="width:150px">
+                        								<option value="00">전체</option>
+                                                        <option value="01">경매번호</option>
+                                                        <option value="02">상품명</option>
+                                                        <option value="03">히스토리</option>
+                                                      </select> <input name="" type="text" />
+              <a href="#">검색</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="1" cellpadding="7" bgcolor="#333333" style="margin-bottom:20px;">
+          <tr bgcolor="#FFFFFF">
+            <td width="10%" height="30px;" class="c"><b><a href="#">경매번호</a></b></td>
+            <td width="20%" class="c"><b><a href="#">상품명</a></b></td>
+			<td width="5%" class="c"><b>보상구매</b></td>
+            <td width="7%" class="c"><b><a href="#">남은시간</a></b></td>
+            <td width="8%" class="c"><b><a href="#">정가</a></b></td>
+            <td width="10%" class="c"><b><a href="#">현재가격</a></b></td>
+            <td width="10%" class="c"><b>*최저가격*</b></td>
+            <td width="10%" class="c"><b>히스토리</b></td>
+            <td width="10%" class="c"><b>즉시구매</b></td>
+            <td width="5%" class="c"><b>수정</b></td>
+            <td width="5%" class="c"><b>삭제</b></td>
+          </tr>
+		  <?
+		  include "../php/connect.php";
+		  $sql=mysql_query("select * from BBanana_items where item_expired > unix_timestamp(now()) order by item_expired ASC") or die(mysql_error()); 
+	
+			$i=0;
+			$cnt=0;
+			while($row=mysql_fetch_array($sql)){
+	
+				/*$now = mktime();
+				$item_num[$i] = $row['item_id'];
+				$item_name[$i] = $row['item_sname'];
+				$item_img[$i] = $row['item_img'];
+				$item_expired[$i] = $row['item_expired'];
+				$item_addedtime[$i] = $row['item_addedtime'];
+				$item_lastprice[$i] = number_format($row['item_price']);
+				$item_lastbider[$i] = $row['item_lastbider'];
+				$item_effect[$i] = "";
+				$time_gap[$i] = $item_expired[$i] - $now;
+				$remain_time[$i] = $time_gap[$i];
+				if($time_gap[$i] < 0) $remain_time[$i] = '경매종료';
+				if($time_gap[$i] <= 10) $item_effect[$i] = 'do';*/
+				
+
+			$time_gap = intval($row['item_expired'])-mktime();
+
+			$hour = floor($time_gap/3600);
+			$min = floor($time_gap%3600/60);
+			$sec = $time_gap%3600%60;
+			if($hour < 10) $hour = "0".$hour;
+			if($min < 10) $min = "0".$min;
+			if($sec < 10) $sec = "0".$sec;
+			$ins_time = $hour.':'.$min.':'.$sec;
+			
+			if($row['is_reward'] == 'yes') $is_reward = "보상가능";
+			else $is_reward = "<div style='color:red;'>불가능</div>";
+
+			$sql2=mysql_query("select COUNT(no) as cnt from BBanana_ships where ship_type = 'reward' and item_id like '".$row['item_id']."%'") or die(mysql_error());
+			$row2=mysql_fetch_array($sql2);
+
+			if($row2['cnt'] == 0) $prt_shipcnt = "-";
+			else $prt_shipcnt = "<a href='#' onclick=openBuyNow('".$row['item_id']."')>".$row2['cnt']."명</a>";
+
+			
+			echo"<tr bgcolor='#FFFFFF' height='20px'>
+			<td>".$row['item_id']."</td>
+            <td><a href='../html/sub.html?sid=".$row['item_id']."' target='_blank'>".$row['item_fname']."</a></td>
+            <td class='c'>".$is_reward."</td>
+			<td class='c'>".$ins_time."</td>
+            <td class='r'>".number_format($row['item_rrp'])."</td>
+            <td class='r'>".number_format($row['item_price'])."</td>
+            <td class='r'>-</td>
+            <td class='c'><a href='#' onclick=openHistory('".$row['item_id']."')>".$row['item_lastbider']."</a></td>
+            <td class='c'>".$prt_shipcnt."</td>
+            <td class='c'><a href='#' onclick=openModify('".$row['item_id']."')>수정</a></td>
+            <td class='c'><a href='#' onclick=del_rec('".$row['item_id']."')>삭제</a></td>
+          </tr>";
+			$i++;
+			++$cnt;
+			}
+
+			mysql_close($connect);
+		  ?>
+          
+        </table>
+</td>
+      </tr>
+    </table>
+</body>
+</html>

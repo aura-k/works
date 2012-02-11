@@ -1,0 +1,1 @@
+<?php $f=array();$f[]="./common/css/default.css";$f[]="./common/css/button.css";$f[]="./common/js/plugins/ui/jquery-ui.css";$f[]="./modules/member/skins/default/css/default.css";$f[]="./layouts/xe_official/css/default.css";$f[]="./widgets/login_info/skins/xe_official/css/default.css"; return $f; ?>
