@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="draw_action.aspx.cs" Inherits="www_draw_action" %>

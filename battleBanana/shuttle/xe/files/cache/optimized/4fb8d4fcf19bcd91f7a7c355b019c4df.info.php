@@ -1,1 +1,0 @@
-<?php $f=array();$f[]="./common/css/default.css";$f[]="./common/css/button.css";$f[]="./modules/message/skins/default/message.css"; return $f; ?>

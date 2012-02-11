@@ -1,1 +1,0 @@
-<?php $f=array();$f[]="./common/js/jquery.js";$f[]="./common/js/x.js";$f[]="./common/js/common.js";$f[]="./common/js/js_app.js";$f[]="./common/js/xml_handler.js";$f[]="./common/js/xml_js_filter.js";$f[]="./files/cache/js_filter_compiled/21e7a54ad21fef17024b49ba735bde39.ko.compiled.js";$f[]="./modules/install/tpl/js/install_admin.js"; return $f; ?>
