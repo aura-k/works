@@ -1,0 +1,22 @@
+body { margin:0px; width:320px; height:395px; background:url('../images/bg.png') no-repeat; background-color:#000000; }
+img { border:0px; }
+input { font:1em Helvetica; height:25px; width:150px; }
+.close { margin:-8px 0 0 250px; }
+
+#introDiv { width:286px; height:385px; margin:20px 0 0 15px; background:url('../images/bg_intro.png') no-repeat; }
+#introDiv .button { margin:320px 0 0 14px; }
+
+#QuizDiv { width:286px; margin:20px 0 0 15px; background:url('../images/bg_q.png') no-repeat; display:none; }
+#QuizDiv .title { margin:115px 0 0 10px; }
+#QuizDiv #q1 {}
+#QuizDiv #q2 { display:none; }
+#QuizDiv #q3 { display:none; }
+#QuizDiv #q1 .desc1 { position:absolute; left:28px; display:none; }
+#QuizDiv #q2 .desc2 { position:absolute; left:28px; display:none; }
+#QuizDiv #q3 .desc3 { position:absolute; top:218px; left:158px; display:none; }
+#QuizDiv #q3 img:eq(1) { float:left; }
+
+#inputDiv { width:286px; height:385px; margin:20px 0 0 15px; background:url('../images/bg_fin.png') no-repeat; display:none; }
+#inputDiv .button { margin:73px 0 0 14px; }
+#inputDiv #nameInput { margin:138px 0 0 95px; }
+#inputDiv #phoneInput { margin:5px 0 0 95px; }

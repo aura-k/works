@@ -1,0 +1,8 @@
+body { margin:0 0 0 0px; }
+img { border:0px; }
+input { font:1em Helvetica }
+#mainDiv { width:320px; height:417px; background:url('../images/bg_event.png') no-repeat; }
+#inputDiv { padding:335px 0 0 35px; }
+#buttonDiv { padding:5px 0 0 200px; }
+#emailInput1 { height:25px; width:90px; }
+#emailInput2 { height:25px; width:100px; }
